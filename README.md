@@ -1,131 +1,341 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# CosyNightIn - Film finder
 
-Welcome Joe Howley,
+![Responsive Mockup](documentation/features/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+*The link to [CosyNightIn]()*
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## About
 
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
-
-### Connecting your Mongo database
-
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**June 18, 2024,** Add Mongo back into template
-
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
-
-**May 28 2024:** Fix Mongo and Links installs
-
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+CosyNightIn is an app that allows you to search for the perfect film to watch depending on your mood, it will use a varity of filters to narrow down the choice and provide a relaxed way to pick what to watch.
 
 ---
 
-Happy coding!
+## User Experience Design
+
+### Strategy
+  1. 
+
+  2. 
+
+  3. 
+
+  4. 
+
+  5. 
+
+  6.  
+
+  7.  
+
+  8. 
+
+  9. 
+
+  10. 
+
+  11. 
+
+  12. 
+
+---
+
+### Target Audience
+
+1. 
+
+
+
+## User Stories
+### First Time Visitor Goals:
+
+* As a First Time Visitor, I want to quickly understand the program's primary purpose so that I can learn more about this program.
+
+* As a First Time Visitor, I want to navigate through the program easily so that I can find the content.
+
+* As a First Time Visitor, I want to find the program useful for myself so that I can fulfill my expectations and have fun.
+
+* As a First Time Visitor, I want to see different text colors so it looks more enticing, and the different parts of the game are easily distinguishable.
+
+
+### Frequent Visitor Goals:
+
+* As a Frequent User, I want to be able to play as many times as I like and not worry about a word being repeated, variation is key in this game.
+* As a Frequent User, I will want to explore the other game option, multiplayer.
+
+---
+
+## Features
+  
+  - 
+
+  - 
+
+  - 
+
+  - 
+
+
+![loading Program](documentation/features/)
+
+![loading Program](documentation/features/)
+
+![loading Program](documentation/features/)
+
+![loading Program](documentation/features/)
+
+---
+
+## Flowchart
+
+The flowchart represents the logic of the application:
+
+  ![Flow chart Page](documentation/features/flowchart.png)
+
+---
+
+## Technologies Used
+
+### Languages:
+
+- [Python 3.8.5](https://www.python.org/downloads/release/python-385/): used to anchor the project and direct all application behavior
+
+- [JavaScript](https://www.javascript.com/): used to provide the start script needed to run the Code Institute mock terminal in the browser
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) used to construct the elements involved in building the mock terminal in the browser
+
+- [CSS](https://www.w3.org/Style/CSS/Overview.en.html) used to edit and adjust the styling and color scheme throughout the app production
+
+### Frameworks/Libraries, Programmes and Tools:
+
+#### Python modules/packages:
+
+##### Standard library imports:
+
+- [random](https://docs.python.org/3/library/random.html) was used to implement pseudo-random word selection from word bank.
+- [os](https://docs.python.org/3/library/os.html) was used to clear the terminal before running the program.
+- [String](https://docs.python.org/3/library/string.html) processes standard strings in various ways in python.
+
+##### Third-party imports:
+
+- [Random Lists](https://www.randomlists.com/data/words.json) Word bank used for word pool for the game.
+- [Colorama](https://pypi.org/project/colorama/) was used to add colors and styles to the project.
+
+
+#### Other tools:
+
+- [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
+- [Git](https://git-scm.com/) was used for the version control of the website.
+- [GitHub](https://github.com/) was used to host the code of the website.
+- [Techsini](https://techsini.com/) used to create the head mock up picture for the readme.
+- [Miro](https://miro.com/app/dashboard/) was used to make a flowchart for project planning and the README file.
+- [Gitpod](https://gitpod.io/workspaces) was used to create the workspaces.
+- [Heroku](https://id.heroku.com/) Used to deploy finished project.
+- [CIlintercheck](https://pep8ci.herokuapp.com/) Code institute Linter validator for python. Used to validate all python files.
+---
+
+## Bugs
+
+- Initial heroku deployment returned an error message. (solution - I forgot to add the Procfile before initial deployment)
+
+
+![Screenshot](documentation/bug_screenshots/)
+
+#### The next screen shots show the code added to prevent this happening.
+
+![Screenshot](documentation/bug_screenshots/)
+
+![Screenshot](documentation/bug_screenshots/)
+
+![Screenshot](documentation/bug_screenshots/)
+
+2. 
+
+*Solution:* 
+
+- 
+
+![Screenshot](documentation/bug_screenshots/)
+
+3. 
+
+*Solution:*
+
+-
+
+![Screenshot](documentation/bug_screenshots/)
+
+![Screenshot](documentation/bug_screenshots)
+
+![Screenshot](documentation/bug_screenshots/)
+
+4. 
+
+![Screenshot](documentation/bug_screenshots/)
+
+*Solution:* 
+
+- 
+
+5. 
+
+*Solution:*
+
+- 
+
+![Screenshot](documentation/bug_screenshots/)
+
+6. 
+
+![Screenshot](documentation/bug_screenshots/)
+
+*Solution:*
+
+- 
+
+![Screenshot](documentation/bug_screenshots/)
+
+7. 
+
+![Screenshot](documentation/bug_screenshots/)
+
+![Screenshot](documentation/bug_screenshots/)
+
+## Information Architecture
+
+### Database
+### ER Diagram
+### Data Modelling
+
+
+## Design
+
+### Color Scheme
+
+### Typeography
+
+### Imagery
+
+### Wire Frames
+
+### Flow Charts
+
+## Testing
+
+- 
+
+- ![screenshot](documentation/validation/)
+
+- Testing was carried out using the CI Linter check web page [CI Linter Validation](https://pep8ci.herokuapp.com/#)
+
+- Please see below for validation screen shots.
+
+## Validation
+
+### run.py Linter Validation
+
+![Screenshot](documentation/validation/)
+
+### player.py Linter Validation
+![Screenshot](documentation/validation/)
+
+### words.py Linter Validation
+![Screenshot](documentation/validation/)
+
+## Manual testing
+
+| feature | action | expected result | tested | passed | comments |
+| --- | --- | --- | --- | --- | --- |
+| Main Title and Menu | | | | | |
+| Main title | Visual representation of the game | Aligned properly and clearly readable | Yes | Yes | - |
+| Menu Display | Select the menu option number desired | The user is redirected to either the rules, a new game or the exit screen | Yes | Yes | - |
+| Game start | User asked for number of players and player names | Input taken and data used to start the game | Yes | Yes | - |
+| Main Game | | | | | |
+| 1 Player Game | Play a solo game | Go through a solo game with no errors and all potential bugs thought about and dealt with | Yes | Yes | - |
+| 2 & 3 Player Game | Play a 2 or 3 player game | As above, however, each player is different colours and its clearly defined | Yes | Yes | - |
+| Game Ending | When a player either guesses the correct word or runs out of guesses | The user is told if they won or lost, if they lost the word will be revealed | Yes | Yes | - |
+| Playing the game | Play the game, without issues | The game is played, the players amount of guesses and letters already guessed is clearly displayed along with the word your attempting to guess. The correct letters appear in the correct space and constantly on display | Yes | Yes | - |
+| Rules | | | | | |
+| List of rules | The rules are listed numerically, in a different color font | The user can gain a clear understanding of the game and how to play it | Yes | Yes | - |
+| Exit | | | | | |
+| Exit button | Select this menu option to leave the game | The user is given a goodbye message and the programme exits back to the python terminal | Yes | Yes | - |
+
+
+## Deployment
+
+- The program was deployed to [Heroku](https://dashboard.heroku.com).
+- The program can be reached by the [link](https://hang-man888-99eb4815e363.herokuapp.com/)
+
+### To deploy the project as an application that can be **run locally**:
+
+*Note:*
+  1. This project requires you to have Python installed on your local PC:
+  - `sudo apt install python3`
+
+  2. You will also need pip installed to allow the installation of modules the application uses.
+  - `sudo apt install python3-pip`
+
+Create a local copy of the GitHub repository by following one of the two processes below:
+
+- Download ZIP file:
+  1. Go to the [GitHub Repo page](https://github.com/Joeski88/hang_man)
+  2. Click the Code button and download the ZIP file containing the project.
+  3. Extract the ZIP file to a location on your PC.
+
+- Clone the repository:
+  1. Open a folder on your computer with the terminal.
+  2. Run the following command
+  - `git clone https://github.com/Joeski88/hang_man`
+
+- Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Joeski88/hang_man)
+
+  1. Install Python module dependencies:
+     
+      1. Navigate to the folder hang_man by executing the command:
+      - `cd hang_man`
+      2. Run the command pip install -r requirements.txt
+        - `pip3 install -r requirements.txt`
+
+### To deploy the project to Heroku so it can be run as a remote web application:
+- Clone the repository:
+  1. Open a folder on your computer with the terminal.
+  2. Run the following command
+    - `git clone https://github.com/Joeski88/hang_man.git`
+  3. Create your own GitHub repository to host the code.
+  4. Run the command `git remote set-url origin <Your GitHub Repo Path>` to set the remote repository location to your repository.
+  5. Push the files to your repository with the following command:
+    - `git push`
+  6. Create a Heroku account if you don't already have one here [Heroku](https://dashboard.heroku.com).
+  7. Create a new Heroku application on the following page here [New Heroku App](https://dashboard.heroku.com/apps):
+  8. Go to the Deploy tab. 
+      - ![Deploy](documentation/deployment/heroku_deploy_tab.png)
+  9. Link your GitHub account and connect the application to the repository you created. 
+      - ![github](documentation/deployment/deployment_method.png)
+  10. Go to the Settings tab.
+  11. Click "Add buildpack". 
+  12. Add the Python and Node.js buildpacks in the following order.
+      - ![Buildpack](documentation/deployment/buildpacks.png)
+  13. Click "Reveal Config Vars." 
+  14. Add 1 new Config Vars:
+      - Key: PORT Value: 8000
+      - *This Config was provided by [CODE INSTITUTE](https://codeinstitute.net/)*.
+      - ![ConfigVars](documentation/deployment/config_vars.png)
+  15. Go back to the Deploy tab.
+  16. Click "Deploy Branch".
+        - Wait for the completion of the deployment. 
+        - ![Deploy](documentation/deployment/deploy.png)
+  17. Click "Open app" to launch the application inside a web page.
+
+
+## Credits
+
+- Color formatting: [Colorama](https://pypi.org/project/colorama/).
+- Random Lists & word banks: [randomlists](https://www.randomlists.com/) This page provided me with a random list of words from the english language to add to words.py.
+- YouTube [youtube.com](https://www.youtube.com/watch?v=8ext9G7xspg&t=5790s) This tutorial showed me the basic logic of making a terminal based hangman python game.
+
+
+## Acknowledgements
+- My Mentor Iuliia Konovalova. I had issues with the help i was recieving with my previous mentor, 
+  but i noticed a huge difference with the way Julia spoke to me and how she managed my situation, 
+  she deserves alot of credit and praise for 
