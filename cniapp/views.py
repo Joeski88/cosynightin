@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Review
 
 # Create your views here.
 
-def my_cniapp(request):
-    return HttpResponse("Hello, CNI community!")
+class Reviews(generic.ListView):
+    queryset = Review.objects.all()
+    template_name = "cniapp/reviews.html"
