@@ -1,5 +1,6 @@
 body {
     background-color: #F9FAFC;
+
 }
 
 .brand {
@@ -9,7 +10,9 @@ body {
     color: #4A4A4F;
 }
 
-
+.trendingfont {
+    color: #46404e;
+}
 .light-bg {
     background-color: #7a749c;
 }
@@ -25,6 +28,10 @@ body {
 .card {
     border: none;
     background-color: transparent;
+}
+
+.card-body {
+    background-color: #7a749c;
 }
 
 .image-container {

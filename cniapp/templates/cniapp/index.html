@@ -3,50 +3,160 @@
 {% block content %}
 
 <!-- index.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for review in reviews %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ review.author }}</p>
-                                </div>
-                            </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ review.title }}</h2>
-                            </a>
-
-                            <hr />
-                            <p class="card-text text-muted h6">{{ review.created_on}}
-                            </p>
-                        </div>
+<main class="trendingfont">
+    <div class="container trendingfont">
+        <h3>Top Trending Movies To Stream</h3>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="/documentation/images/akillersmemory.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title trendingfont">Knox Goes Away</h4>
+                        <h5>Amazon Prime</h5>
+                        <a
+                            href="https://www.rottentomatoes.com/m/knox_goes_away">https://www.rottentomatoes.com/m/knox_goes_away</a>
+                        <p class="card-text">When a contract killer has a rapidly evolving form of dementia, he is
+                            offered an opportunity to redeem himself by saving the life of the adult son with whom he
+                            had been estranged.</p>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
             </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
+            <div class="col">
+                <div class="card">
+                    <img src="/documentation/images/films/challengers.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Challengers</h4>
+                        <h5>Amazon Prime</h5>
+                        <a
+                            href="https://www.rottentomatoes.com/m/challengers_2024">https://www.rottentomatoes.com/m/challengers_2024</a>
+                        <p class="card-text">From visionary filmmaker Luca Guadagnino, Challengers stars Zendaya as
+                            Tashi Duncan, a former tennis prodigy turned coach and a force of nature who makes no
+                            apologies for her game on and off the court.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="/documentation/images/films/insideout2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Inside Out 2</h4>
+                        <h5>Disney+</h5>
+                        <a
+                            href="https://www.rottentomatoes.com/m/inside_out_2">https://www.rottentomatoes.com/m/inside_out_2</a>
+                        <p class="card-text">The little voices inside Riley's head know her inside and out--but next
+                            summer, everything changes when Disney and Pixar's Inside Out 2 introduces a new Emotion:
+                            Anxiety.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="/documentation/images/films/itswhatsinside.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">It's Whats Inside</h4>
+                        <h5>Netflix</h5>
+                        <a
+                            href="https://www.rottentomatoes.com/m/its_whats_inside">https://www.rottentomatoes.com/m/its_whats_inside</a>
+                        <p class="card-text">A pre-wedding reunion descends into a psychological nightmare for a group
+                            of college friends when a surprise guest arrives with a mysterious suitcase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="/documentation/images/films/killerheat.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Killer Heat</h4>
+                        <h5>Amazon Prime</h5>
+                        <a
+                            href="https://www.rottentomatoes.com/m/killer_heat">https://www.rottentomatoes.com/m/killer_heat</a>
+                        <p class="card-text">A thrilling, contemporary mystery in classic noir style, Killer Heat
+                            follows private eye Nick Bali (Joseph Gordon-Levitt), an American expat in Greece, hired to
+                            investigate the supposed accidental death of young shipping magnate Leo Vardakis (Richard
+                            Madden) on the island of Crete.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="/documentation/images/films/kingdom.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Kingdom of The Planet of The Apes</h4>
+                        <h5>Disney+</h5>
+                        <a
+                            href="https://www.rottentomatoes.com/m/kingdom_of_the_planet_of_the_apes">https://www.rottentomatoes.com/m/kingdom_of_the_planet_of_the_apes</a>
+                        <p class="card-text">Director Wes Ball breathes new life into the global, epic franchise set
+                            several generations in the future following Caesar's reign, in which apes are the dominant
+                            species living harmoniously and humans have been reduced to living in the shadows.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="/documentation/images/films/rebelridge.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Rebel Ridge</h4>
+                        <h5>Netflix</h5>
+                        <a
+                            href="https://www.rottentomatoes.com/m/rebel_ridge">https://www.rottentomatoes.com/m/rebel_ridge</a>
+                        <p class="card-text">Terry Richmond enters the town of Shelby Springs on a simple but urgent
+                            mission-- post bail for his cousin and save him from imminent danger. But when Terry’s
+                            life’s savings is unjustly seized by law-enforcement, he’s forced to go head to head with
+                            local police chief Sandy Burnne.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="/documentation/images/films/theinstigators.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">The Instigators</h4>
+                        <h5>Apple TV+</h5>
+                        <a
+                            href="https://www.rottentomatoes.com/m/the_instigators">https://www.rottentomatoes.com/m/the_instigators</a>
+                        <p class="card-text">Rory (Matt Damon) and Cobby (Casey Affleck) are reluctant partners: a
+                            desperate father and an ex-con thrown together to rob a corrupt politician's ill-gained
+                            earnings. But when the heist goes wrong, the two find themselves engulfed in a whirlwind of
+                            chaos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="/documentation/images/films/menendezbros.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">The Menendez Brothers</h4>
+                        <h5>Netflix</h5>
+                        <a
+                            href="https://www.rottentomatoes.com/m/the_menendez_brothers">https://www.rottentomatoes.com/m/the_menendez_brothers</a>
+                        <p class="card-text">In 1996, Lyle and Erik Menendez were convicted for the murders of their
+                            parents in what became one of the most famous criminal cases of the late 20th century. For
+                            the first time in 30 years, and in their own words, both brothers revisit the trial that
+                            shocked the nation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="/documentation/images/films/wolfs.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">Wolfs</h4>
+                        <h5>Apple TV+</h5>
+                        <a href="https://www.rottentomatoes.com/m/wolfs">https://www.rottentomatoes.com/m/wolfs</a>
+                        <p class="card-text">Global superstars George Clooney and Brad Pitt team up for the action
+                            comedy Wolfs. Clooney plays a professional fixer hired to cover up a high profile crime. But
+                            when a second fixer (Pitt) shows up and the two "lone wolves" are forced to work together,
+                            they find their night spiraling out of control in ways that neither one of them expected.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
-
+</main>
 <!-- index.html content ends here -->
 {% endblock %}
