@@ -32,3 +32,17 @@ class Comment(models.Model):
         ordering = ["-created_on"]
         def __str__(self):
             return f"Comment {self.body} by {self.author}"
+
+
+class Movie(models.Model):
+    title = models.CharField(max_length=255)
+    release_date = models.CharField(max_length=100, blank=True)
+    overview = models.TextField(blank=True)
+    genre = models.CharField(max_length=100, blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['title']
+
+    def __str__(self):
+        return self.title
