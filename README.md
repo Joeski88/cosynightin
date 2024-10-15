@@ -131,12 +131,14 @@ The flowchart represents the logic of the application:
 - [Gitpod](https://gitpod.io/workspaces) was used to create the workspaces.
 - [Heroku](https://id.heroku.com/) Used to deploy finished project.
 - [CIlintercheck](https://pep8ci.herokuapp.com/) Code institute Linter validator for python. Used to validate all python files.
+- [SQLite3](https://sqlitebrowser.org/) SQLite3 was used to import external DB for filter use.
 ---
 
 ## Bugs
 
 - Initial heroku deployment returned an error message. (solution - I forgot to add the Procfile before initial deployment)
 
+- Wehn trying to add the filter models/view to the browser, the code was running without an error but the view didnt appear in the browser. (Solution - I forgot to add the model to admin.py therefore it wasnt looking for it.)
 
 ![Screenshot](documentation/bug_screenshots/)
 
