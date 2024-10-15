@@ -132,6 +132,7 @@ The flowchart represents the logic of the application:
 - [Heroku](https://id.heroku.com/) Used to deploy finished project.
 - [CIlintercheck](https://pep8ci.herokuapp.com/) Code institute Linter validator for python. Used to validate all python files.
 - [SQLite3](https://sqlitebrowser.org/) SQLite3 was used to import external DB for filter use.
+- [FaviconGenerator](https://favicon.io/favicon-generator/) Used to create custom favicon
 ---
 
 ## Bugs

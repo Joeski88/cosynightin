@@ -26,7 +26,7 @@ class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
     approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)#
+    created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -35,7 +35,7 @@ class Comment(models.Model):
 
 
 class Movie(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, blank=True)
     release_date = models.CharField(max_length=100, blank=True)
     overview = models.TextField(blank=True)
     genre = models.CharField(max_length=100, blank=True)
