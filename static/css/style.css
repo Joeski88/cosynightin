@@ -13,6 +13,13 @@ body {
 .trendingfont {
     color: #e1dee6;
 }
+
+.filterstyling {
+    position: absolute;
+    justify-content: right;
+
+}
+
 .light-bg {
     background-color: #7a749c;
 }

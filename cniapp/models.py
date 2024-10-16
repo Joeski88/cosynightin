@@ -37,7 +37,7 @@ class Comment(models.Model):
 class Movie(models.Model):
     title = models.CharField(max_length=255, blank=True)
     release_date = models.CharField(max_length=100, blank=True)
-    overview = models.TextField(blank=True)
+    overview = models.TextField(max_length=300, blank=True)
     genre = models.CharField(max_length=100, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 

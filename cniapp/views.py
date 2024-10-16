@@ -20,12 +20,16 @@ class MovieSearchView(View):
     # starts with all movies, then filters based on form input
     def get(self, request):
         form = MovieSearchForm(request.GET)
-        movies = Movie.objects.all()
+        movies = Movie.objects.none()
+        # check the movies in the database
+        
 
         if form.is_valid():
             query = form.cleaned_data.get('query')
             genre = form.cleaned_data.get('genre')
             release_date = form.cleaned_data.get('release_date')
+            # check the query is being passed here
+            print("Query: ", query)
 
             # filters to apply if provided
             if query:
@@ -34,7 +38,7 @@ class MovieSearchView(View):
                 movies = movies.filter(genre__icontains=genre)
             if release_date:
                 movies = movies.filter(release_date__icontains=release_date)
-
+                print("Moves: ", movies)
         context = {
             'form': form,
             'movies': movies,

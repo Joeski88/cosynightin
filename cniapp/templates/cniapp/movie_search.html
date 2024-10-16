@@ -1,23 +1,34 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<h1>Search For Your Movie</h1>
-<form method="get" action="{% url 'movie_search' %}">
-    {{ form.as_p }}
-    <button type="submit">Search</button>
-</form>
 
-{% if movies %}
-    <h2>Search results</h2>
-    <ul>
-        {% for movie in movies %}
-        <li>
-            <a href="{% url 'movie_detail' movie.pk %}">{{ movie.title }}</a> ({{ movie.release_date}})<br>
-            {{ movie.overview }}
-        </li>
-        {% endfor %}
-    </ul>
-{% elif form.is_bound %}
-<p>No Results Found.</p>
+<main class="trendingfont">
+    <div class="container border border-secondary bg-secondary text-white">
+        <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2">
+                <h1>Search For Your Movie</h1>
+                <form method="get" action="{% url 'movie_search' %}">
+                    {{ form.as_p }}
+                    <button type="submit">Search</button>
+                </form>
+
+                {% if movies %}
+                <h2>Search results</h2>
+                <ul>
+                    {% for movie in movies %}
+                    <li>
+                        <a href="{% url 'movie_detail' movie.pk %}">{{ movie.title }}</a>
+                        ({{ movie.release_date}})<br>
+                        {{ movie.overview }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% elif form.is_bound %}
+                <p>No Results Found.</p>
+            </div>
+        </div>
+    </div>
+</main>
 {% endif %}
 {% endblock %}
