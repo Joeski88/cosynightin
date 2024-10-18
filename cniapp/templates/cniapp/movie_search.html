@@ -18,9 +18,10 @@
                 <ul>
                     {% for movie in movies %}
                     <li>
-                        <a href="{% url 'movie_detail' movie.pk %}">{{ movie.title }}</a>
-                        ({{ movie.release_date}})<br>
-                        {{ movie.overview }}
+                        <a href="https://www.rottentomatoes.com/{{movie.rotten_tomatoes_link}}">{{ movie.movie_title }}</a>
+                        ({{ movie.original_release_date}})<br>
+                        {{ movie.genres }}<br>
+                        {{ movie.movie_info}}
                     </li>
                     {% endfor %}
                 </ul>

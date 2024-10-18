@@ -3,7 +3,7 @@ from django.views import generic
 from django.views import View #maybe change to list view
 from .models import Review
 from .forms import CommentForm
-from .models import Movie
+from .models import Movies
 from .forms import MovieSearchForm
 # Create your views here.
 
@@ -15,35 +15,37 @@ class Reviews(generic.ListView):
 
 """view for search filter"""
 
-class MovieSearchView(View):
+def MovieSearchView(request):
     template_name = "cniapp/movie_search.html"
     # starts with all movies, then filters based on form input
-    def get(self, request):
-        form = MovieSearchForm(request.GET)
-        movies = Movie.objects.none()
+    form = MovieSearchForm()
+    movies = Movies.objects.all()
+    all_movies_count = Movies.objects.count()
+    #Movies = []
+
         # check the movies in the database
         
 
-        if form.is_valid():
-            query = form.cleaned_data.get('query')
-            genre = form.cleaned_data.get('genre')
-            release_date = form.cleaned_data.get('release_date')
-            # check the query is being passed here
-            print("Query: ", query)
+    if request.method == 'GET':
+        query = request.GET.get('query')
+        genre = request.GET.get('genre')
+        release_date = request.GET.get('release_date')
+        # check the query is being passed here
+        print("Query: ", query)
 
             # filters to apply if provided
-            if query:
-                movies = movies.filter(title__icontains=query)
-            if genre:
-                movies = movies.filter(genre__icontains=genre)
-            if release_date:
-                movies = movies.filter(release_date__icontains=release_date)
-                print("Moves: ", movies)
-        context = {
-            'form': form,
-            'movies': movies,
-        }
-        return render(request, self.template_name, context)
+        if query:
+            movies = movies.filter(movie_title__icontains=query)
+        if genre:
+            movies = movies.filter(genres__icontains=genre)
+        if release_date:
+            movies = movies.filter(original_release_date__icontains=release_date)
+            print(query, movies)
+
+        filtered_movies_count = movies.count()
+        if filtered_movies_count == all_movies_count:
+            movies = []
+        return render(request, template_name, {'form': form, 'movies': movies}) 
 
 """view for details provided from database"""
 

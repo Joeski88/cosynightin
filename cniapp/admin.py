@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Review, Comment
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Movie
+from .models import Movies
 
 
 @admin.register(Review)
@@ -15,4 +15,4 @@ class ReviewAdmin(SummernoteModelAdmin):
 
 # Register your models here.
 admin.site.register(Comment)
-admin.site.register(Movie)
+admin.site.register(Movies)

@@ -166,3 +166,17 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+.card {
+    max-width: 25%;
+}
+
+.tilepadding {
+    padding-top: 20px;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
