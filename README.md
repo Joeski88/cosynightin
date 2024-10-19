@@ -333,9 +333,11 @@ Create a local copy of the GitHub repository by following one of the two process
 
 ## Credits
 
-- Color formatting: [Colorama](https://pypi.org/project/colorama/).
-- Random Lists & word banks: [randomlists](https://www.randomlists.com/) This page provided me with a random list of words from the english language to add to words.py.
-- YouTube [youtube.com](https://www.youtube.com/watch?v=8ext9G7xspg&t=5790s) This tutorial showed me the basic logic of making a terminal based hangman python game.
+- Favicon Design Tool [Favicon](https://favicon.io/favicon-generator/).
+- Rotten Tomatoes for the links and data [Rotten Tomatoes](https://www.rottentomatoes.com/) Used Rotten tomatoes and a reference for all movies provided to the database.
+- Kaggle [Kaggle](https://www.kaggle.com/datasets?search=rotten+tomatoes) Database hub that I pulled the movie databse from.
+- Bootstrap [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) Used Bootstrap documentation to help guid me to the correct code to use and what its for.
+
 
 
 ## Acknowledgements

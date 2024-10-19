@@ -44,4 +44,3 @@ class MovieSearchViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'cniapp/movie_search.html')
         self.assertContains(response, "No movies found.")
-

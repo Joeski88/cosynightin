@@ -21,25 +21,32 @@ def MovieSearchView(request):
     form = MovieSearchForm()
     movies = Movies.objects.all()
     all_movies_count = Movies.objects.count()
-    #Movies = []
 
-        # check the movies in the database
-        
 
+    # check the movies in the database
     if request.method == 'GET':
         query = request.GET.get('query')
         genre = request.GET.get('genre')
         release_date = request.GET.get('release_date')
+        directors = request.GET.get('directors')
+        actors = request.GET.get('actors')
+        tomatometer_rating = request.GET.get('tomatometer_rating')
         # check the query is being passed here
         print("Query: ", query)
 
-            # filters to apply if provided
+        # filters to apply if provided
         if query:
             movies = movies.filter(movie_title__icontains=query)
         if genre:
             movies = movies.filter(genres__icontains=genre)
         if release_date:
             movies = movies.filter(original_release_date__icontains=release_date)
+        if directors: 
+            directors = movies.filter(directors__icontains=directors)
+        if actors: 
+            actors = movies.filter(actors__icontains=actors)
+        if tomatometer_rating: 
+            tomatometer_rating = movies.filter(tomatometer_rating__icontains=tomatometer_rating)    
             print(query, movies)
 
         filtered_movies_count = movies.count()

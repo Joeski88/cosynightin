@@ -8,7 +8,9 @@
             <div class="col-md-8 mt-3 offset-md-2 trendingfont">
                 <h1>{{ movie.title }}</h1>
                 <p><strong>Release Date:</strong>{{ movie.release_date }}</p>
-                <p><strong>Genre:</strong>{{ movie.Genre }}</p>
+                <p><strong>Genre:</strong>{{ movie.genre }}</p>
+                <p><strong>Rating:</strong>{{ movie.rating }}</p>
+                <p><strong>Director:</strong>{{ movie.director }}</p>
                 <p>{{ movie.overview}}</p>
                 <a href="{% url 'movie_search' }">Back to search.</a>
             </div>

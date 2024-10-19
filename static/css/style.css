@@ -171,12 +171,18 @@ body {
     max-width: 25%;
 }
 
+/* home page tile styling */
 .tilepadding {
-    padding-top: 20px;
+    padding: 20px;
 }
-
+/* footer styling */
 .footer {
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 0px;
+}
+/* search form styling */
+.form-control {
+    align-content: center;
+    position: absolute;
 }
