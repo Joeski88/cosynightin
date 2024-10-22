@@ -139,7 +139,9 @@ The flowchart represents the logic of the application:
 
 - Initial heroku deployment returned an error message. (solution - I forgot to add the Procfile before initial deployment)
 
-- Wehn trying to add the filter models/view to the browser, the code was running without an error but the view didnt appear in the browser. (Solution - I forgot to add the model to admin.py therefore it wasnt looking for it.)
+- When trying to add the filter models/view to the browser, the code was running without an error but the view didnt appear in the browser. (Solution - I forgot to add the model to admin.py therefore it wasnt looking for it.)
+
+- Struggled to connect external database to app using sqlite db. 
 
 ![Screenshot](documentation/bug_screenshots/)
 
