@@ -19,7 +19,9 @@
                             <!-- data specified to be pulled from the database -->
                             <li>
                                 <a
-                                    href="https://www.rottentomatoes.com/{{movie.rotten_tomatoes_link}}">{{ movie.movie_title }}</a>
+                                    href="https://www.rottentomatoes.com/{{movie.rotten_tomatoes_link}}"
+                                    aria-label="rottentomatoeslink" >
+                                    {{ movie.movie_title }}</a>
                                 ({{ movie.original_release_date}})<br>
                                 {{ movie.genres }}<br>
                                 {{ movie.movie_info}}<br>
