@@ -5,7 +5,6 @@ from .models import Review
 from .forms import CommentForm
 from .models import Movies
 from .forms import MovieSearchForm
-# Create your views here.
 
 class Reviews(generic.ListView):
     queryset = Review.objects.all()

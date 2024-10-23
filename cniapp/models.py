@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
+""" Review Model """ 
 
 class Review(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -20,6 +20,7 @@ class Review(models.Model):
         def __str__(self):
             return f"{self.title} | written by {self.author}"
 
+""" comment model """
 
 class Comment(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="comments")
@@ -33,6 +34,7 @@ class Comment(models.Model):
         def __str__(self):
             return f"Comment {self.body} by {self.author}"
 
+""" Movie model, all fields available to be pulled from database """
 
 class Movies(models.Model):
     rotten_tomatoes_link = models.TextField(blank=True, null=True)

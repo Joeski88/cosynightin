@@ -1,6 +1,5 @@
 body {
-    background-color: #F9FAFC;
-
+    background-color: #314d85;
 }
 
 .brand {
@@ -10,6 +9,7 @@ body {
     color: #4A4A4F;
 }
 
+/* carousel content colour */
 .trendingfont {
     color: #e1dee6;
 }
@@ -20,6 +20,11 @@ body {
 
 }
 
+/* standard html color styles */
+
+#navbarText {
+    color: antiquewhite;
+}
 .light-bg {
     background-color: #7a749c;
 }
@@ -171,13 +176,9 @@ body {
     max-width: 25%;
 }
 
-/* home page tile styling */
-.tilepadding {
-    padding: 20px;
-}
 /* footer styling */
 .footer {
-    position: fixed;
+    position: absolute;
     width: 100%;
     bottom: 0px;
 }
@@ -185,4 +186,32 @@ body {
 .form-control {
     align-content: center;
     position: absolute;
+}
+
+#searchfilter {
+    width: fit-content;
+    background-color: black;
+    margin: auto;
+}
+
+/*custom css for carousel content*/
+.carousel-caption {
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+    position: static;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: dimgrey;
+}
+
+/* home page title style */
+.hometitle {
+    text-align: center;
+    padding-bottom: 30px;
+    color: antiquewhite;
 }
