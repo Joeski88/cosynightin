@@ -69,14 +69,11 @@
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-
                     <li class="nav-item"></li>
                     <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}" 
                     aria-label="searchbutton" aria-current="page"
                         href="{% url 'movie_search' %}">Search for your movie</a>
                     </li>
-
-
                 </ul>
                 <span class="navbar-text text-white">
                     Grab the popcorn, fire up Netflix, and we will do the rest!
@@ -93,6 +90,10 @@
     </nav>
 </header>
 {% block content %}
+
+<main>
+    
+</main>
 {% endblock content %}
 
 
@@ -110,5 +111,4 @@
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
 </script>
 </body>
-
 </html>

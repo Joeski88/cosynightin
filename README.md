@@ -13,66 +13,59 @@ CosyNightIn is an app that allows you to search for the perfect film to watch de
 ## User Experience Design
 
 ### Strategy
-  1. 
 
-  2. 
-
-  3. 
-
-  4. 
-
-  5. 
-
-  6.  
-
-  7.  
-
-  8. 
-
-  9. 
-
-  10. 
-
-  11. 
-
-  12. 
+* The aim of this app is to give users a platform to be able to search and filter a movie database to find themselves a film to watch. It's desgined to be easy and quick to use, while also providing all the information needed to make an informed decision and pick the perfect movie for your evening.  
 
 ---
 
 ### Target Audience
 
-1. 
+* The app is aimed at anyone movie lovers, family, friends and partners that you always seem to argue with about what to watch.
 
 
 
 ## User Stories
 ### First Time Visitor Goals:
 
-* As a First Time Visitor, I want to quickly understand the program's primary purpose so that I can learn more about this program.
-
-* As a First Time Visitor, I want to navigate through the program easily so that I can find the content.
-
-* As a First Time Visitor, I want to find the program useful for myself so that I can fulfill my expectations and have fun.
-
-* As a First Time Visitor, I want to see different text colors so it looks more enticing, and the different parts of the game are easily distinguishable.
+| Issue ID    | User Story |
+|-------------|-------------|
+|[#1](https://github.com/Joeski88/cosynightin/issues/17)| As a First Time Visitor, I want to be able to easily creat an account to be able to access the main features of the app.|
+|[#2](https://github.com/Joeski88/cosynightin/issues/18)|As a First Time Visitor, I want to be able to find and discover films to watch based on how im feeling and what kind of mood im in.|
+|[#3](https://github.com/Joeski88/cosynightin/issues/3)|As a First Time Visitor, I want to be able to easily log out of my account for security reasons, after I have found the film I want to watch.|
+|[#4](https://github.com/Joeski88/cosynightin/issues/4)|As a First Time Visitor, I want to be able to see detailed information of each film I look at to be able to make an informed decision on what to watch.|
+|[#5](https://github.com/Joeski88/cosynightin/issues/7)|As a First Time Visitor, I want to be able to see detailed information of each film I look at via a link to the rotten tomatoes page (opened in a different tab) to be able to make an even more informed decision on what to watch.|
+|[#6](https://github.com/Joeski88/cosynightin/issues/15)|As a First Time Visitor, I want to be able to use filters to streamline my search to narrow down the results to make my decision easier to make.|
+|[#7](https://github.com/Joeski88/cosynightin/issues/10)|As a First Time Visitor, I want to be able to have the ability to read reviews of other users to help aid me make my decision.|
 
 
 ### Frequent Visitor Goals:
 
-* As a Frequent User, I want to be able to play as many times as I like and not worry about a word being repeated, variation is key in this game.
-* As a Frequent User, I will want to explore the other game option, multiplayer.
+| Issue ID    | User Story |
+|-------------|-------------|
+|[#1](https://github.com/Joeski88/cosynightin/issues/1)|As a Frequent Visitor, I want to be able to easily be able to reset my password if i have forgotten my details to be able to access my account whenever needed. |
+|[#2](https://github.com/Joeski88/cosynightin/issues/8)|As a Frequent Visitor, I want to be able to rate films ive watched to help other users make a decision.|
+|[#3](https://github.com/Joeski88/cosynightin/issues/9)|As a Frequent Visitor, I want to be able to comment on reviews left by others to agree with or disagree with other users and offer my insight too. Also to thank others who leave comments on my reviews. |
+|[#4](https://github.com/Joeski88/cosynightin/issues/5)|As a Frequent Visitor, I want to be able to search using keywords or film titles to get information on specific films i could potentially watch. |
+|[#5](https://github.com/Joeski88/cosynightin/issues/6)|As a Frequent Visitor, I want to be able to search using actor and actress names to get information on specific films i could potentially watch. |
+|[#6](https://github.com/Joeski88/cosynightin/issues/12)|As a Frequent Visitor, I want to be able to filter by film rating (provided by rotten tomatoes) to narrow down the search for what I want. |
+|[#7](https://github.com/Joeski88/cosynightin/issues/11)|As a Frequent Visitor, I want to be able to search using specfic genre names to get information on specific films i could potentially watch. |
+
+### Admin Goals:
+
+| Issue ID    | User Story |
+|-------------|-------------|
+|[#1](https://github.com/Joeski88/cosynightin/issues/13)| As an admin user, I want to be able to easily understand the main purpose of the app, so that I can learn more about this app. |
+|[#2](https://github.com/Joeski88/cosynightin/issues/20)|As an admin user, I want to be able to add and approve new members/users so that I can manage the account and ensure the process and app is clean and restrict an abusive behaviour/language. |
 
 ---
 
 ## Features
   
-  - 
+  - Home page will provide and carousel of trending movies currently availabble to stream, for potentially a quick decision in what to watch. All will contain an external rotten tomatoes link to provide extra details on each film.
 
-  - 
+  - Once logged in the user will be able to use a variety of filters to use to streamline the result output and narrow down their search to make an easier choice.
 
-  - 
-
-  - 
+  - Users will have the option of leaving reviews and comments on other reviews made by other users.
 
 
 ![loading Program](documentation/features/)
@@ -89,7 +82,7 @@ CosyNightIn is an app that allows you to search for the perfect film to watch de
 
 The flowchart represents the logic of the application:
 
-  ![Flow chart Page](documentation/features/flowchart.png)
+  ![Flow chart Page](/documentation/screenshots/flowchart.png)
 
 ---
 
@@ -107,18 +100,22 @@ The flowchart represents the logic of the application:
 
 ### Frameworks/Libraries, Programmes and Tools:
 
+- [Django](https://www.djangoproject.com/): python framework used to create the project.
+- [jQuery](https://jquery.com/): was used to control click events.
+- [Bootstrap](https://getbootstrap.com/): Frameworks used to style parts of the app.
+
 #### Python modules/packages:
+
+- [SQLite](https://www.sqlite.org/): was used to store rotten tomatoes database.
+- [PostgreSQL](https://www.postgresql.org/): the database used to store all the data on admin side.
 
 ##### Standard library imports:
 
-- [random](https://docs.python.org/3/library/random.html) was used to implement pseudo-random word selection from word bank.
-- [os](https://docs.python.org/3/library/os.html) was used to clear the terminal before running the program.
-- [String](https://docs.python.org/3/library/string.html) processes standard strings in various ways in python.
+
 
 ##### Third-party imports:
 
-- [Random Lists](https://www.randomlists.com/data/words.json) Word bank used for word pool for the game.
-- [Colorama](https://pypi.org/project/colorama/) was used to add colors and styles to the project.
+
 
 
 #### Other tools:
@@ -132,7 +129,18 @@ The flowchart represents the logic of the application:
 - [Heroku](https://id.heroku.com/) Used to deploy finished project.
 - [CIlintercheck](https://pep8ci.herokuapp.com/) Code institute Linter validator for python. Used to validate all python files.
 - [SQLite3](https://sqlitebrowser.org/) SQLite3 was used to import external DB for filter use.
-- [FaviconGenerator](https://favicon.io/favicon-generator/) Used to create custom favicon
+- [FaviconGenerator](https://favicon.io/favicon-generator/) Used to create custom favicon.
+- [Pip3](https://pypi.org/project/pip/): the package manager used to install the dependencies.
+- [Gunicorn](https://gunicorn.org/): the webserver used to run the website.
+- [Spycopg2](https://www.python.org/dev/peps/pep-0249/): the database driver used to connect to the database.
+- [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
+- [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behavior of Django forms.
+- [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
+- [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
+- [JShint](https://jshint.com/): was used to validate JS code for the website.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
+- [BGjar](https://bgjar.com/colored-shapes): I used this tool to create my background image for the app.
+
 ---
 
 ## Bugs
