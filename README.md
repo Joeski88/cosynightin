@@ -140,6 +140,7 @@ The flowchart represents the logic of the application:
 - [JShint](https://jshint.com/): was used to validate JS code for the website.
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
 - [BGjar](https://bgjar.com/colored-shapes): I used this tool to create my background image for the app.
+- [pixillionfileconverter](https://www.nchsoftware.com/imageconverter): Used to convert my background image file type from svg to jpg. 
 
 ---
 
@@ -149,7 +150,9 @@ The flowchart represents the logic of the application:
 
 - When trying to add the filter models/view to the browser, the code was running without an error but the view didnt appear in the browser. (Solution - I forgot to add the model to admin.py therefore it wasnt looking for it.)
 
-- Struggled to connect external database to app using sqlite db. 
+- Struggled to connect external database to app using sqlite db.
+
+- Was unable to add a background image due to the file type being ".svg" had to download a file type converter online to convert to a .jpeg. This solved gthe issue. 
 
 ![Screenshot](documentation/bug_screenshots/)
 
