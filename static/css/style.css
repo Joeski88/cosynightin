@@ -190,10 +190,10 @@ body {
 /* search form styling */
 .form-control {
     align-content: center;
-    position: absolute;
+    position: static;
     width: 100%;
     display: inline-block;
-    text-align: right;
+    text-align: left;
 }
 
 #searchfilter {

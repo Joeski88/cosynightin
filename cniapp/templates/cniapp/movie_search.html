@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <!-- Movie Search -->
@@ -13,9 +14,8 @@
                 <div class="col-md-8 mt-3 offset-md-2">
                     <h1>Search For Your Movie</h1>
                     <form method="get" action="{% url 'movie_search' %}" class="search-form">
-                        <ul style="display: inline;">
-                            {{ form.as_ul }}
-                        </ul>
+                        {{ form | crispy }}
+                        {% csrf_token %}
                             <button type="submit">Search</button>
                             {% if movies %}
                             <h2>Search results</h2>
@@ -26,13 +26,13 @@
                                     <li>
                                         <a href="https://www.rottentomatoes.com/{{movie.rotten_tomatoes_link}}"
                                             aria-label="rottentomatoeslink">
-                                            {{ movie.movie_title }}</a>
-                                        <p><strong>Release Date:</strong>({{ movie.original_release_date}})<br></p>
-                                        {{ movie.genres }}<br>
-                                        {{ movie.movie_info}}<br>
-                                        {{ movie.directors}}<br>
-                                        {{ movie.actors}}<br>
-                                        {{ movie.tomatometer_rating}}
+                                        <p><strong>Movie: </strong>{{ movie.movie_title }}</a></p>
+                                        <p><strong>Release Date: </strong>({{ movie.original_release_date}})<br></p>
+                                        <p><strong>Genre: </strong>{{ movie.genres }}<br></p>
+                                        <p><strong>Description: </strong>{{ movie.movie_info}}<br></p>
+                                        <p><strong>Director: </strong>{{ movie.directors}}<br></p>
+                                        <p><strong>Actors: </strong>{{ movie.actors}}<br></p>
+                                        <p><strong>Rating: </strong>{{ movie.tomatometer_rating}}<br></p>
                                     </li>
                                     {% endfor %}
                                 </ul>
