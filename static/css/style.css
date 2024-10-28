@@ -197,22 +197,29 @@ body {
 }
 
 #searchfilter {
-    width: fit-content;
     background-color: black;
-    margin: auto;
-    margin-top: 100px;
     opacity: 70%;
     border-radius: 75px;
-    padding: 30px;
+    width: 100%;
 }
 
 .search-form {
-    display: inline-block;
-    width: 140px;
-    text-align: right;
+    height: 98%;
+    width: 100%;
 }
 
+.search-form form {
+    width: 100%;
+}
+.search-form li {
+    display: inline;
+}
+
+.search-form ul {
+    display: inline;
+}
 /*custom css for carousel content*/
+
 .carousel-caption {
     right: 15%;
     bottom: 1.25rem;
@@ -238,4 +245,11 @@ body {
 /* film image style */
 .film-images {
     border-radius: 10px;
+    height: 98%;
+}
+
+/* cni logo styling */
+.cnilogo {
+    max-width: 10px;
+    max-height: 10px;
 }

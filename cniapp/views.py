@@ -41,11 +41,12 @@ def MovieSearchView(request):
         if release_date:
             movies = movies.filter(original_release_date__icontains=release_date)
         if directors: 
-            directors = movies.filter(directors__icontains=directors)
+            movies = movies.filter(directors__icontains=directors)
         if actors: 
-            actors = movies.filter(actors__icontains=actors)
-        if tomatometer_rating: 
-            tomatometer_rating = movies.filter(tomatometer_rating__icontains=tomatometer_rating)    
+            movies = movies.filter(actors__icontains=actors)
+        if tomatometer_rating:
+            # added gt to stop filter sending only the rating provided by user 
+            movies = movies.filter(tomatometer_rating__gt=tomatometer_rating)    
             print(query, movies)
 
         filtered_movies_count = movies.count()
