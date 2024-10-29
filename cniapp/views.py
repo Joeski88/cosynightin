@@ -7,10 +7,28 @@ from .forms import CommentForm
 from .models import Movies
 from .forms import MovieSearchForm
 
-class Reviews(generic.ListView):
-    queryset = Review.objects.all()
+
+"""set which html template to use for home page """
+class home_page(generic.ListView):
     template_name = "cniapp/index.html"
-    paginate_by = 6
+
+
+""" Movie Review View """
+def leave_review(request, movie_id):
+    movie = get_object_or_404(Movie, id=movie_id)
+    
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.author = request.user  # Set the current user as the author
+            review.movie = movie  # Associate the review with the movie
+            review.save()
+            return redirect('movie_detail', movie_id=movie.id)  # Redirect to the movie detail page
+    else:
+        form = ReviewForm()
+
+    return render(request, 'leave_review.html', {'form': form, 'movie': movie})
 
 
 """view for search filter"""

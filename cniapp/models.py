@@ -3,36 +3,6 @@ from django.contrib.auth.models import User
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-""" Review Model """ 
-
-class Review(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="film_review")
-    content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    excerpt = models.TextField(blank=True)
-    updated_on = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["-created_on"]
-        def __str__(self):
-            return f"{self.title} | written by {self.author}"
-
-""" comment model """
-
-class Comment(models.Model):
-    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="comments")
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
-    body = models.TextField()
-    approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ["-created_on"]
-        def __str__(self):
-            return f"Comment {self.body} by {self.author}"
 
 """ Movie model, all fields available to be pulled from database """
 
@@ -66,3 +36,35 @@ class Movies(models.Model):
 
     def __str__(self):
         return f"{self.movie_title if self.movie_title else 'Unknown title'}"
+
+""" Review Model """ 
+
+class Review(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="film_review")
+    movie = models.ForeignKey('Movies', on_delete=models.CASCADE, related_name="reviews")
+    content = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+    excerpt = models.TextField(blank=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-created_on"]
+        def __str__(self):
+            return f"{self.title} | written by {self.author}"
+
+""" Comment model """
+
+class Comment(models.Model):
+    review = models.ForeignKey('Review', on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_on"]
+        def __str__(self):
+            return f"Comment {self.body} by {self.author}"

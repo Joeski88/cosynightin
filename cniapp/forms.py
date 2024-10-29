@@ -1,6 +1,13 @@
 from django import forms
-from .models import Movies
+from .models import Movies, Review
 from .models import Comment
+
+
+""" form for leaving a review """
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['title', 'content', 'movie']
 
 """ form for movie commenting """
 class CommentForm(forms.ModelForm):
