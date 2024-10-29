@@ -1,9 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from django.views import View #maybe change to list view
+from django.views import View 
 from django.contrib.auth.decorators import login_required
-#from django.contrib.auth.middleware import LoginRequiredMiddleware
-#from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Review
 from .forms import CommentForm
 from .models import Movies
@@ -16,6 +14,7 @@ class Reviews(generic.ListView):
 
 
 """view for search filter"""
+# login authentication and redirection path
 @login_required(login_url="/accounts/login/")
 def MovieSearchView(request):
     template_name = "cniapp/movie_search.html"

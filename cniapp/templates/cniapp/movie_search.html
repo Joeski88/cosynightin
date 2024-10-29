@@ -4,9 +4,8 @@
 
 {% block content %}
 <!-- Movie Search -->
-<main class="trendingfont" id="searchfilter">
+<main class="trendingfont mx-auto" id="searchfilter">
     <!-- class main.bg adds background image to page -->
-
     <body class="main-bg" >
         <!-- create container for the movie search-->
         <div class="container w-100">
@@ -25,7 +24,7 @@
                                     <!-- data specified to be pulled from the database -->
                                     <li>
                                         <a href="https://www.rottentomatoes.com/{{movie.rotten_tomatoes_link}}"
-                                            aria-label="rottentomatoeslink">
+                                            aria-label="rottentomatoeslink" target="_blank">
                                         <p><strong>Movie: </strong>{{ movie.movie_title }}</a></p>
                                         <p><strong>Release Date: </strong>({{ movie.original_release_date}})<br></p>
                                         <p><strong>Genre: </strong>{{ movie.genres }}<br></p>
@@ -37,7 +36,6 @@
                                     {% endfor %}
                                 </ul>
                             </div>
-                        
                     </form>
                     <!-- If no results are found -->
                     {% elif form.is_bound %}
