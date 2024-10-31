@@ -7,7 +7,7 @@ from .models import Comment
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['title', 'content', 'movie']
+        fields = ['title', 'content', 'movie_title']
 
 """ form for movie commenting """
 class CommentForm(forms.ModelForm):

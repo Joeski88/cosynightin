@@ -11,6 +11,7 @@ from .forms import MovieSearchForm
 """set which html template to use for home page """
 class home_page(generic.ListView):
     template_name = "cniapp/index.html"
+    return render(request, template_name, 'index.html')
 
 
 """ Movie Review View """

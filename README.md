@@ -78,13 +78,23 @@ CosyNightIn is an app that allows you to search for the perfect film to watch de
 
 ---
 
-## Flowchart
+## Flowchart & Entity Relationship Diagrams
 
 The flowchart represents the logic of the application:
 
-  ![Flow chart Page](/documentation/screenshots/flowchart.png)
+  ![Flow chart Page](/static/images/flowchartprocess.png)
 
 ---
+
+The entity relationship diagrams for all models used in the application:
+
+  ![ERDscreenshots](/static/images/erdiagrams.png)
+
+---
+
+The relationships used in the application:
+
+  ![Relationships](/static/images/relationships.png)
 
 ## Technologies Used
 
@@ -111,12 +121,7 @@ The flowchart represents the logic of the application:
 
 ##### Standard library imports:
 
-
-
 ##### Third-party imports:
-
-
-
 
 #### Other tools:
 
@@ -140,7 +145,8 @@ The flowchart represents the logic of the application:
 - [JShint](https://jshint.com/): was used to validate JS code for the website.
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
 - [BGjar](https://bgjar.com/colored-shapes): I used this tool to create my background image for the app.
-- [pixillionfileconverter](https://www.nchsoftware.com/imageconverter): Used to convert my background image file type from svg to jpg. 
+- [pixillionfileconverter](https://www.nchsoftware.com/imageconverter): Used to convert my background image file type from svg to jpg.
+- [Canva](https://www.canva.com/): I used canva to create CNI app logo.  
 
 ---
 
@@ -148,78 +154,32 @@ The flowchart represents the logic of the application:
 
 - Initial heroku deployment returned an error message. (solution - I forgot to add the Procfile before initial deployment)
 
+*solution:*
+![Screenshot](/static/documentation/debugging/procfilesolution.png)
+
 - When trying to add the filter models/view to the browser, the code was running without an error but the view didnt appear in the browser. (Solution - I forgot to add the model to admin.py therefore it wasnt looking for it.)
+
+*solution:*
+![Screenshot](/static/documentation/debugging/adminsolution.png)
 
 - Struggled to connect external database to app using sqlite db.
 
-- Was unable to add a background image due to the file type being ".svg" had to download a file type converter online to convert to a .jpeg. This solved gthe issue. 
-
-![Screenshot](documentation/bug_screenshots/)
-
-#### The next screen shots show the code added to prevent this happening.
-
-![Screenshot](documentation/bug_screenshots/)
-
-![Screenshot](documentation/bug_screenshots/)
-
-![Screenshot](documentation/bug_screenshots/)
-
-2. 
-
-*Solution:* 
-
-- 
-
-![Screenshot](documentation/bug_screenshots/)
-
-3. 
+- Was unable to add a background image due to the file type being ".svg" had to download a file type converter online to convert to a .jpeg. This solved the issue. 
+![Screenshot](/static/documentation/debugging/bgimagebug.png)
 
 *Solution:*
+![Screenshot](/static/documentation/debugging/bgimagesolution.png)
 
--
+- Struggling to add the model, views and forms for users to have the ability to leave movie reviews. UNSOLVED!!
 
-![Screenshot](documentation/bug_screenshots/)
+- Bootstrap carousel pushing header and footer off the page. UNSOLVED!!
 
-![Screenshot](documentation/bug_screenshots)
+- Log in/out & sign up html pages not inheriting the base html as they should in regards to styles (background image and font colours etc) despite the static files being loaded at the top of the page. UNSOLVED!!
 
-![Screenshot](documentation/bug_screenshots/)
-
-4. 
-
-![Screenshot](documentation/bug_screenshots/)
-
-*Solution:* 
-
-- 
-
-5. 
-
-*Solution:*
-
-- 
-
-![Screenshot](documentation/bug_screenshots/)
-
-6. 
-
-![Screenshot](documentation/bug_screenshots/)
-
-*Solution:*
-
-- 
-
-![Screenshot](documentation/bug_screenshots/)
-
-7. 
-
-![Screenshot](documentation/bug_screenshots/)
-
-![Screenshot](documentation/bug_screenshots/)
 
 ## Information Architecture
 
 ### Database
-### ER Diagram
 ### Data Modelling
 
 
@@ -233,13 +193,9 @@ The flowchart represents the logic of the application:
 
 ### Wire Frames
 
-### Flow Charts
 
 ## Testing
 
-- 
-
-- ![screenshot](documentation/validation/)
 
 - Testing was carried out using the CI Linter check web page [CI Linter Validation](https://pep8ci.herokuapp.com/#)
 
@@ -261,10 +217,11 @@ The flowchart represents the logic of the application:
 
 | feature | action | expected result | tested | passed | comments |
 | --- | --- | --- | --- | --- | --- |
-| Main Title and Menu | | | | | |
-| Main title | Visual representation of the game | Aligned properly and clearly readable | Yes | Yes | - |
-| Menu Display | Select the menu option number desired | The user is redirected to either the rules, a new game or the exit screen | Yes | Yes | - |
-| Game start | User asked for number of players and player names | Input taken and data used to start the game | Yes | Yes | - |
+| Home Page | | | | | |
+| Image Slides | Visual aspect to add an appealing style to the home page, hammers home eactly what the site is about. | Aligned properly and clearly visible, 'active' feature to make slides automatically change working. | Yes | Yes | - |
+| Sign Up | Option to create account as a user | The user is redirected to sign up page | Yes | Yes | - |
+| Sign In | User inputs login details to gain access to full site | Input taken and data used to start the game | Yes | Yes | - |
+| Sign Out | User asked for number of players and player names | Input taken and data used to start the game | Yes | Yes | - |
 | Main Game | | | | | |
 | 1 Player Game | Play a solo game | Go through a solo game with no errors and all potential bugs thought about and dealt with | Yes | Yes | - |
 | 2 & 3 Player Game | Play a 2 or 3 player game | As above, however, each player is different colours and its clearly defined | Yes | Yes | - |
