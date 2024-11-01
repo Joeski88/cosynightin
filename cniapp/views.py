@@ -95,7 +95,6 @@ class MovieDetailView(View):
 
     def get(self,request, pk):
         movie = get_object_or_404(Movies, pk=pk)
-
         reviews = Reviews.objects.all()
         reviews = reviews.filter(movie_id__exact=movie.id)
         context = {

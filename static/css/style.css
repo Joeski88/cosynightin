@@ -3,7 +3,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
     }
 
 .brand {
@@ -212,6 +211,7 @@ body {
     border-radius: 75px;
     width: 60%;
     margin-top: auto;
+    height: 100vh;
 }
 
 .search-form {
@@ -263,4 +263,20 @@ body {
 .cnilogo {
     max-width: 10px;
     max-height: 10px;
+}
+
+/* review form styling */
+.reviewform {
+    border-radius: 75px;
+    width: 60%;
+    margin-top: auto;
+    height: 100vh;
+    color: antiquewhite;
+    margin-top: 200px;
+}
+
+/*login logout signup html page basic styling */
+.loginpages {
+    height: 100vh;
+    color: antiquewhite;
 }
