@@ -6,7 +6,8 @@
 <!-- Movie Search -->
 <main class="trendingfont mx-auto" id="searchfilter">
     <!-- class main.bg adds background image to page -->
-    <body class="main-bg" >
+
+    <body class="main-bg">
         <!-- create container for the movie search-->
         <div class="container w-100">
             <div class="row">
@@ -15,27 +16,31 @@
                     <form method="get" action="{% url 'movie_search' %}" class="search-form">
                         {{ form | crispy }}
                         {% csrf_token %}
-                            <button type="submit">Search</button>
-                            {% if movies %}
-                            <h2>Search results</h2>
-                            <div style="height: 500px; overflow: auto;">
-                                <ul>
-                                    {% for movie in movies %}
-                                    <!-- data specified to be pulled from the database -->
-                                    <li>
-                                        <a href="https://www.rottentomatoes.com/{{movie.rotten_tomatoes_link}}"
-                                            aria-label="rottentomatoeslink" target="_blank">
-                                        <p><strong>Movie: </strong>{{ movie.movie_title }}</a></p>
-                                        <p><strong>Release Date: </strong>({{ movie.original_release_date}})<br></p>
-                                        <p><strong>Genre: </strong>{{ movie.genres }}<br></p>
-                                        <p><strong>Description: </strong>{{ movie.movie_info}}<br></p>
-                                        <p><strong>Director: </strong>{{ movie.directors}}<br></p>
-                                        <p><strong>Actors: </strong>{{ movie.actors}}<br></p>
-                                        <p><strong>Rating: </strong>{{ movie.tomatometer_rating}}<br></p>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                        <button type="submit">Search</button>
+                        {% if movies %}
+                        <h2>Search results</h2>
+                        <div style="height: 500px; overflow: auto;">
+                            <ul>
+                                {% for movie in movies %}
+                                <!-- data specified to be pulled from the database -->
+                                <li>
+                                    <a href="/movie/{{movie.id}}" target="_blank" aria-label="Link to film information">
+                                        <p><strong>Movie: </strong>{{ movie.movie_title }}
+                                    </a></p>
+                                    <p><a href="/movies/{{movie.id}}/review">Leave a Review</a></p>
+                                    <p><strong>Release Date: </strong>({{ movie.original_release_date}})<br></p>
+                                    <p><strong>Genre: </strong>{{ movie.genres }}<br></p>
+                                    <p><strong>Description: </strong>{{ movie.movie_info}}<br></p>
+                                    <p><strong>Director: </strong>{{ movie.directors}}<br></p>
+                                    <p><strong>Actors: </strong>{{ movie.actors}}<br></p>
+                                    <p><strong>Rating: </strong>{{ movie.tomatometer_rating}}<br></p>
+                                    </a>
+                                    <a href="https://www.rottentomatoes.com/{{movie.rotten_tomatoes_link}}"
+                                        aria-label="rottentomatoeslink" target="_blank">
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </form>
                     <!-- If no results are found -->
                     {% elif form.is_bound %}

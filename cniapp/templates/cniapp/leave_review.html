@@ -2,11 +2,12 @@
 {% load static %}
 {% block content %}
 
-<h2>Leave a Review for {{ movie.title }}</h2>
+<h2>Leave a Review for {{ movie.movie_title }}</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Submit Review</button>
 </form>
+<a href="{% url 'movie_detail' movie.id %}" aria-label="Link to go back to search results">Back to Movie Details</a>
 
 {% endblock %}

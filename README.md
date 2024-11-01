@@ -170,7 +170,10 @@ The relationships used in the application:
 *Solution:*
 ![Screenshot](/static/documentation/debugging/bgimagesolution.png)
 
-- Struggling to add the model, views and forms for users to have the ability to leave movie reviews. UNSOLVED!!
+- Struggling to add the model, views and forms for users to have the ability to leave movie reviews.
+
+*Solution*
+- Updated database to include movie_id in the reviews table as a foreign key, pointing to the primary key id in the movies table. Then created a view model and form for the reviews, this included adding a review, via a form, adding a filter to extract all reviews for the specific movie, and display as part of the movie_detail view.
 
 - Bootstrap carousel pushing header and footer off the page. UNSOLVED!!
 
@@ -215,22 +218,29 @@ The relationships used in the application:
 
 ## Manual testing
 
-| feature | action | expected result | tested | passed | comments |
+| Feature | Action | Expected Result | Tested | Passed | Comments |
 | --- | --- | --- | --- | --- | --- |
 | Home Page | | | | | |
-| Image Slides | Visual aspect to add an appealing style to the home page, hammers home eactly what the site is about. | Aligned properly and clearly visible, 'active' feature to make slides automatically change working. | Yes | Yes | - |
+| Bootstrap Carousel Image Slides | Visual aspect to add an appealing style to the home page, hammers home eactly what the site is about. | Aligned properly and clearly visible, 'active' feature to make slides automatically change working. | Yes | Yes | - |
 | Sign Up | Option to create account as a user | The user is redirected to sign up page | Yes | Yes | - |
 | Sign In | User inputs login details to gain access to full site | Input taken and data used to start the game | Yes | Yes | - |
 | Sign Out | User asked for number of players and player names | Input taken and data used to start the game | Yes | Yes | - |
-| Main Game | | | | | |
-| 1 Player Game | Play a solo game | Go through a solo game with no errors and all potential bugs thought about and dealt with | Yes | Yes | - |
-| 2 & 3 Player Game | Play a 2 or 3 player game | As above, however, each player is different colours and its clearly defined | Yes | Yes | - |
-| Game Ending | When a player either guesses the correct word or runs out of guesses | The user is told if they won or lost, if they lost the word will be revealed | Yes | Yes | - |
-| Playing the game | Play the game, without issues | The game is played, the players amount of guesses and letters already guessed is clearly displayed along with the word your attempting to guess. The correct letters appear in the correct space and constantly on display | Yes | Yes | - |
-| Rules | | | | | |
-| List of rules | The rules are listed numerically, in a different color font | The user can gain a clear understanding of the game and how to play it | Yes | Yes | - |
-| Exit | | | | | |
-| Exit button | Select this menu option to leave the game | The user is given a goodbye message and the programme exits back to the python terminal | Yes | Yes | - |
+| Search Filter Feature | | | | | |
+| Search by Film Name | Search by specific film name | Search results shnow a list of the movie or movies that match the text in the search field input.  | Yes | Yes | Can show multiple film titles as part of a set, (eg Harry Potter), as well as idividual movies |
+| Search by Genre | Search by specific genre (eg Horror, comedy) | As above, however, search result based up genre input | Yes | Yes | - |
+| Search by Actor| Search by specific Actor/Actress | Any film featuring the named actor/actress will be listed in search results | Yes | Yes | - |
+| Search by Release Date | Search by specific Year of release | Define which year you wish the results to yield from (eg 1991) and all films released in that year are listed in the search results | Yes | Yes | - |
+| Search by Rotten Tomato Rating | Search by rating | Any film with the specified rating or higher will be listed in the search results | Yes | Yes | - |
+| Reviews & Comments | | | | | |
+| Leaving a Review | The rules are listed numerically, in a different color font | The user can gain a clear understanding of the game and how to play it | Yes | Yes | - |
+| Adding Comments | Select this menu option to leave the game | The user is given a goodbye message and the programme exits back to the python terminal | Yes | Yes | - |
+| 'Like' Button | Select this menu option to leave the game | The user is given a goodbye message and the programme exits back to the python terminal | Yes | Yes | - |
+| Admin Testing | | | | | |
+| Add a User | Search by specific film name | Search results shnow a list of the movie or movies that match the text in the search field input.  | Yes | Yes | Can show multiple film titles as part of a set, (eg Harry Potter), as well as idividual movies |
+| Remove/Delete User | Search by specific genre (eg Horror, comedy) | As above, however, search result based up genre input | Yes | Yes | - |
+| Approve Reviews/Comments | Search by specific Actor/Actress | Any film featuring the named actor/actress will be listed in search results | Yes | Yes | - |
+| Delete Reviews/Comments | Search by specific Year of release | Define which year you wish the results to yield from (eg 1991) and all films released in that year are listed in the search results | Yes | Yes | - |
+| Search by Rotten Tomato Rating | Search by rating | Any film with the specified rating or higher will be listed in the search results | Yes | Yes | - |
 
 
 ## Deployment

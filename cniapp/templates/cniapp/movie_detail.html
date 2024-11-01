@@ -3,17 +3,32 @@
 
 {% block content %}
 <main class="trendingfont">
+
     <body>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mt-3 offset-md-2 trendingfont">
                     <h1>{{ movie.title }}</h1>
-                    <p><strong>Release Date: </strong>{{ movie.release_date }}</p>
-                    <p><strong>Genre: </strong>{{ movie.genre }}</p>
-                    <p><strong>Rating: </strong>{{ movie.rating }}</p>
+                    <p><strong>Release Date: </strong>{{ movie.original_release_date }}</p>
+                    <p><strong>Genre: </strong>{{ movie.genres }}</p>
+                    <p><strong>Rating: </strong>{{ movie.tomatometer_rating }}</p>
                     <p><strong>Director: </strong>{{ movie.director }}</p>
                     <p>{{ movie.overview}}</p>
                     <a href="{% url 'movie_search' }">Back to search.</a>
+
+                    <h2>Reviews for {{ movie.movie_title }}</h2>
+                                        <ul>
+                                            {% for review in reviews %}
+                                            <li>
+                                                <strong>{{ review.title }}</strong> by {{ review.author }}<br>
+                                                {{ review.content }}<br>
+                                                <small>Posted on {{ review.created_on }}</small>
+                                            </li>
+                                            {% empty %}
+                                            <li>No reviews yet. Be the first to leave one!</li>
+                                            {% endfor %}
+                                        </ul>
+
                 </div>
             </div>
         </div>

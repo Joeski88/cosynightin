@@ -1,22 +1,25 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from django.views import View 
+from django.views import View
+from django.views.generic import TemplateView 
 from django.contrib.auth.decorators import login_required
 from .models import Review
 from .forms import CommentForm
 from .models import Movies
-from .forms import MovieSearchForm
+from .forms import MovieSearchForm, ReviewForm
 
 
 """set which html template to use for home page """
-class home_page(generic.ListView):
+
+class HomePageView(generic.ListView):
+    queryset = Review.objects.all()
     template_name = "cniapp/index.html"
-    return render(request, template_name, 'index.html')
 
 
 """ Movie Review View """
+
 def leave_review(request, movie_id):
-    movie = get_object_or_404(Movie, id=movie_id)
+    movie = get_object_or_404(Movies, id=movie_id)
     
     if request.method == 'POST':
         form = ReviewForm(request.POST)
@@ -24,12 +27,13 @@ def leave_review(request, movie_id):
             review = form.save(commit=False)
             review.author = request.user  # Set the current user as the author
             review.movie = movie  # Associate the review with the movie
+            review.slug = str(review.movie_id) + "-" + movie.movie_title
             review.save()
-            return redirect('movie_detail', movie_id=movie.id)  # Redirect to the movie detail page
+            return redirect('movie_detail', pk=movie_id)  # Redirect to the movie detail page
     else:
         form = ReviewForm()
 
-    return render(request, 'leave_review.html', {'form': form, 'movie': movie})
+    return render(request, 'cniapp/leave_review.html', {'form': form, 'movie': movie})
 
 
 """view for search filter"""
@@ -51,6 +55,10 @@ def MovieSearchView(request):
         directors = request.GET.get('directors')
         actors = request.GET.get('actors')
         tomatometer_rating = request.GET.get('tomatometer_rating')
+
+        # Pulls all reviews
+        reviews = Review.objects.all()
+
         # check the query is being passed here
         print("Query: ", query)
 
@@ -73,7 +81,12 @@ def MovieSearchView(request):
         filtered_movies_count = movies.count()
         if filtered_movies_count == all_movies_count:
             movies = []
-        return render(request, template_name, {'form': form, 'movies': movies}) 
+        
+        context = {'form': form,
+                'movies': movies,
+                'reviews': reviews
+                    }
+        return render(request, template_name, context) 
 
 """view for details provided from database"""
 
@@ -81,8 +94,12 @@ class MovieDetailView(View):
     template_name = "cniapp/movie_detail.html"
 
     def get(self,request, pk):
-        movie = get_object_or_404(Movie, pk=pk)
+        movie = get_object_or_404(Movies, pk=pk)
+
+        reviews = Reviews.objects.all()
+        reviews = reviews.filter(movie_id__exact=movie.id)
         context = {
-            'movie': movie
+            'movie': movie,
+            'reviews': reviews,
         }
         return render(request, self.template_name, context)

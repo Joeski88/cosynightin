@@ -7,6 +7,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 """ Movie model, all fields available to be pulled from database """
 
 class Movies(models.Model):
+    id = models.IntegerField(blank=False, null=False, primary_key=True)
     rotten_tomatoes_link = models.TextField(blank=True, null=True)
     movie_title = models.TextField(blank=True, null=True)
     movie_info = models.TextField(blank=True, null=True)
@@ -43,14 +44,16 @@ class Review(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="film_review")
-    movie_title = models.ForeignKey(Movies, on_delete=models.CASCADE, default=1)
+    movie = models.ForeignKey(Movies, on_delete=models.CASCADE, related_name="Reviews")
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    movie_info = models.TextField(blank=True, null=True)
 
     class Meta:
+        managed = False
         ordering = ["-created_on"]
         def __str__(self):
             return f"{self.title} | written by {self.author}"
