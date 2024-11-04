@@ -3,6 +3,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
     }
 
 .brand {
@@ -42,6 +45,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    height: 100vh;
 }
 
 .card {
@@ -187,7 +191,7 @@ body {
 .header {
     position: fixed;
     top: 0;
-    margin-top: 100px;
+    width: 100%;
 }
 
 /* footer styling */
@@ -209,9 +213,10 @@ body {
     background-color: black;
     opacity: 70%;
     border-radius: 75px;
-    width: 60%;
-    margin-top: auto;
-    height: 100vh;
+    width: 50%;
+    margin-top: 100px;
+    padding-bottom: 15px;
+
 }
 
 .search-form {
@@ -244,10 +249,12 @@ body {
     padding-left: 30px;
     background-color: dimgrey;
     opacity: 70%;
+    margin-top: 30px;
 }
 
 /* home page title style */
 .hometitle {
+    margin-top: 200px;
     text-align: center;
     padding-bottom: 30px;
     color: antiquewhite;

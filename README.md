@@ -2,7 +2,7 @@
 
 ![Responsive Mockup](documentation/features/)
 
-*The link to [CosyNightIn]()*
+*The link to [CosyNightIn](https://8000-joeski88-cosynightin-e6en1er8oxr.ws.codeinstitute-ide.net/)*
 
 ## About
 
@@ -146,38 +146,55 @@ The relationships used in the application:
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
 - [BGjar](https://bgjar.com/colored-shapes): I used this tool to create my background image for the app.
 - [pixillionfileconverter](https://www.nchsoftware.com/imageconverter): Used to convert my background image file type from svg to jpg.
-- [Canva](https://www.canva.com/): I used canva to create CNI app logo.  
+- [Canva](https://www.canva.com/): I used canva to create CNI app logo.
+- [Googlefonts](https://fonts.google.com/specimen/Roboto): Used to find the font needed for the app.  
 
 ---
 
 ## Bugs
 
+*Bug*
 - Initial heroku deployment returned an error message. (solution - I forgot to add the Procfile before initial deployment)
 
 *solution:*
 ![Screenshot](/static/documentation/debugging/procfilesolution.png)
 
-- When trying to add the filter models/view to the browser, the code was running without an error but the view didnt appear in the browser. (Solution - I forgot to add the model to admin.py therefore it wasnt looking for it.)
+*Bug*
+- When trying to add the filter models/view to the browser, the code was running without an error but the view didnt appear in the browser. 
 
-*solution:*
+*Solution* 
+- I forgot to add the model to admin.py therefore it wasnt looking for it.
 ![Screenshot](/static/documentation/debugging/adminsolution.png)
 
+*Bug*
 - Struggled to connect external database to app using sqlite db.
 
+*Solution*
+
+*Bug*
 - Was unable to add a background image due to the file type being ".svg" had to download a file type converter online to convert to a .jpeg. This solved the issue. 
 ![Screenshot](/static/documentation/debugging/bgimagebug.png)
 
 *Solution:*
 ![Screenshot](/static/documentation/debugging/bgimagesolution.png)
 
+*Bug*
 - Struggling to add the model, views and forms for users to have the ability to leave movie reviews.
 
 *Solution*
-- Updated database to include movie_id in the reviews table as a foreign key, pointing to the primary key id in the movies table. Then created a view model and form for the reviews, this included adding a review, via a form, adding a filter to extract all reviews for the specific movie, and display as part of the movie_detail view.
+- Updated database to include movie_id in the reviews table as a foreign key in SQLite3 desktop app, pointing to the primary key id in the movies table. Then created a view model and form for the reviews, this included adding a review, via a form, adding a filter to extract all reviews for the specific movie, and display as part of the movie_detail view.
 
-- Bootstrap carousel pushing header and footer off the page. UNSOLVED!!
+*Bug*
+- Bootstrap carousel and search filter pushing header and footer off the page. 
 
-- Log in/out & sign up html pages not inheriting the base html as they should in regards to styles (background image and font colours etc) despite the static files being loaded at the top of the page. UNSOLVED!!
+*Solution*
+- Added 100vh to the main and removed the position on the footer.
+
+*Bug*
+- Log in/out & sign up html pages not inheriting the base html as they should in regards to styles (background image and font colours etc) despite the static files being loaded at the top of the page.
+
+*Solution* 
+- Forgot to add the ".main-bg" class to the main of each html page, including the log in and log out pages. 
 
 
 ## Information Architecture
@@ -190,11 +207,43 @@ The relationships used in the application:
 
 ### Color Scheme
 
+The Color scheme I decided to use was a dark Navy Blue as the main colour. the shapes I used a RGB color index to find the suitable colors for the effect I wanted.
+
+![Screenshot](/static/documentation/screenshots/backgroundcolourscheme.png)
+
 ### Typeography
+
+The main font used on the page is a standard and widely used font called Roboto taken from [googlefonts](https://fonts.google.com/specimen/Roboto).
+
+![Screenshot](/static/documentation/screenshots/font2.png)
+
+The backup font made available is called Lato [googlefonts](https://fonts.google.com/specimen/Lato). 
+
+![Screenshot](/static/documentation/screenshots/font1.png)
+
+They were picked as they are good for most styles of app and have a clear letter definition which makes it easy to read throughout the app. 
 
 ### Imagery
 
+All images in the home page carousel were taken from the [RottenTomatoes](https://www.rottentomatoes.com/) website via a google search.
+
+The background image was designed on [BGjar](https://bgjar.com/colored-shapes).
+
+The CNI logo used in the Header is also a custom design using [Canva](https://www.canva.com/).
+
 ### Wire Frames
+
+- Home Page
+
+![Screenshot](/static/documentation/screenshots/homepagewf.png)
+
+- Search Filter Page
+
+![Screenshot](/static/documentation/screenshots/filterpagewf.png)
+
+- Search Results Page
+
+![Screenshot](/static/documentation/screenshots/searchresultswf.png)
 
 
 ## Testing
@@ -314,7 +363,7 @@ Create a local copy of the GitHub repository by following one of the two process
 ## Credits
 
 - Favicon Design Tool [Favicon](https://favicon.io/favicon-generator/).
-- Rotten Tomatoes for the links and data [Rotten Tomatoes](https://www.rottentomatoes.com/) Used Rotten tomatoes and a reference for all movies provided to the database.
+- Rotten Tomatoes for the links and data [RottenTomatoes](https://www.rottentomatoes.com/) Used Rotten tomatoes and a reference for all movies provided to the database.
 - Kaggle [Kaggle](https://www.kaggle.com/datasets?search=rotten+tomatoes) Database hub that I pulled the movie databse from.
 - Bootstrap [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) Used Bootstrap documentation to help guid me to the correct code to use and what its for.
 

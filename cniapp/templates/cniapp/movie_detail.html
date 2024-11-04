@@ -3,19 +3,67 @@
 
 {% block content %}
 <main class="trendingfont">
+    <!-- Search results for filtered user search -->
 
     <body>
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mt-3 offset-md-2 trendingfont">
                     <h1>{{ movie.title }}</h1>
-                    <p><strong>Release Date: </strong>{{ movie.original_release_date }}</p>
-                    <p><strong>Genre: </strong>{{ movie.genres }}</p>
-                    <p><strong>Rating: </strong>{{ movie.tomatometer_rating }}</p>
-                    <p><strong>Director: </strong>{{ movie.director }}</p>
-                    <p>{{ movie.overview}}</p>
-                    <a href="{% url 'movie_search' }">Back to search.</a>
+                    <!-- Nav style tab system for search results - bootstrap -->
+                    <ul class="nav nav-tabs" id="searchtabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="releasedate-tab" data-toggle="tab" href="#releasedate" 
+                            role="tab" aria-controls="home" aria-selected="true">Release Date</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="genre-tab" data-toggle="tab" href="#genre" role="tab"
+                                aria-controls="profile" aria-selected="false">Genre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="rating-tab" data-toggle="tab" href="#rating" role="tab"
+                                aria-controls="messages" aria-selected="false">Rating</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="director-tab" data-toggle="tab" href="#director" role="tab"
+                                aria-controls="settings" aria-selected="false">Directors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="actor-tab" data-toggle="tab" href="#actor" role="tab"
+                                aria-controls="settings" aria-selected="false">Actors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="overview-tab" data-toggle="tab" href="#overview" role="tab"
+                                aria-controls="settings" aria-selected="false">Overview</a>
+                        </li>
+                    </ul>
 
+                    <!-- Tab content -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="releasedate" role="tabpanel" aria-labelledby="release-tab">
+                            <p><strong>Release Date: </strong>{{ movie.original_release_date }}</p>
+                        </div>
+                        <div class="tab-pane" id="genre" role="tabpanel" aria-labelledby="genre-tab">
+                            <p><strong>Genre: </strong>{{ movie.genres }}</p>
+                        </div>
+                        <div class="tab-pane" id="rating" role="tabpanel" aria-labelledby="rating-tab">
+                            <p><strong>Rating: </strong>{{ movie.tomatometer_rating }}</p>
+                        </div>
+                        <div class="tab-pane" id="director" role="tabpanel" aria-labelledby="director-tab">
+                            <p><strong>Director: </strong>{{ movie.director }}</p>
+                        </div>
+                        <div class="tab-pane" id="actor" role="tabpanel" aria-labelledby="actor-tab">
+                            <p><strong>Director: </strong>{{ movie.actor }}</p>
+                        </div>
+                        <div class="tab-pane" id="overview" role="tabpanel" aria-labelledby="overview-tab"></div>
+                            <p>{{ movie.overview}}</p>
+                        </div>
+                    </div>
+
+                    <!-- link to send you back to original search page -->
+                    <a href="{% url 'movie_search' }">Back to search.</a>
+                    
+                    <!-- Reviews on the site from other users -->
                     <h2>Reviews for {{ movie.movie_title }}</h2>
                                         <ul>
                                             {% for review in reviews %}

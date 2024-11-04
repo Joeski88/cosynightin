@@ -10,14 +10,12 @@ from .forms import MovieSearchForm, ReviewForm
 
 
 """set which html template to use for home page """
-
 class HomePageView(generic.ListView):
     queryset = Review.objects.all()
     template_name = "cniapp/index.html"
 
 
 """ Movie Review View """
-
 def leave_review(request, movie_id):
     movie = get_object_or_404(Movies, id=movie_id)
     
@@ -74,7 +72,7 @@ def MovieSearchView(request):
         if actors: 
             movies = movies.filter(actors__icontains=actors)
         if tomatometer_rating:
-            # added gt to stop filter sending only the rating provided by user 
+            # added gt to stop filter sending only the specific rating provided by user 
             movies = movies.filter(tomatometer_rating__gt=tomatometer_rating)    
             print(query, movies)
 

@@ -4,6 +4,8 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% load crispy_forms_tags %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -34,8 +36,8 @@
 
 </head>
 
-<header class="d-flex flex-column dark-bg">
-<!-- Nav Bar -->
+<header class="d-flex flex-column dark-bg header">
+    <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light text-white">
         <div class="container-fluid">
             <a class="navbar-brand text-white" aria-label="homebutton" href="{% url 'index' %}">
@@ -48,32 +50,63 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}" 
-                        aria-label="homebutton"  aria-current="page"
-                            href="/">| Home |</a>
+                        <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}"
+                            aria-label="homebutton" aria-current="page" href="/">| Home |</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == logout_url %}active{% endif %}" 
-                        aria-label="logoutbutton" aria-current="page"
-                            href="{% url 'account_logout' %}">| Logout |</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn text-white" data-bs-toggle="modal"
+                            data-bs-target="#logoutModal">
+                            | Logout
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logout"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="logoutModalLabel">Logout</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are You Sure You Want To Log Out?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <form method="post" action="{% url 'account_logout' %}">
+                                            {{ form | crispy }}
+                                            {% csrf_token %}
+                                            {% if redirect_field_value %}
+                                            <input type="hidden" name="{{ redirect_field_name }}"
+                                            value="{{ redirect_field_value }}" />
+                                            {% endif %}
+                                            <button class="btn btn-signup right" type="submit">
+                                                {% trans 'Log Out' %}</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == signup_url %}active{% endif %}" 
-                        aria-label="registerbutton" aria-current="page"
-                            href="{% url 'account_signup' %}">| Register |</a>
+                        <a class="nav-link text-white {% if request.path == signup_url %}active{% endif %}"
+                            aria-label="registerbutton" aria-current="page" href="{% url 'account_signup' %}">| Register
+                            |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == login_url %}active{% endif %}" 
-                        aria-label="loginbutton"  aria-current="page"
-                            href="{% url 'account_login' %}">| Login |</a>
+                        <a class="nav-link text-white {% if request.path == login_url %}active{% endif %}"
+                            aria-label="loginbutton" aria-current="page" href="{% url 'account_login' %}">| Login |</a>
                     </li>
                     {% endif %}
                     <li class="nav-item"></li>
-                    <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}" 
-                    aria-label="searchbutton" aria-current="page"
-                        href="{% url 'movie_search' %}">Search For Your Movie</a>
+                    <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
+                        aria-label="searchbutton" aria-current="page" href="{% url 'movie_search' %}">Search For Your
+                        Movie</a>
                     </li>
                 </ul>
             </div>
@@ -90,6 +123,7 @@
 {% block content %}
 
 <main>
+
     <body>
     </body>
 </main>
@@ -109,4 +143,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
 </script>
+
 </html>

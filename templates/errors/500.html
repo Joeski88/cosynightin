@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %} Extra Title {% endcomment %}
+{% block extra_title %}404 Error{% endblock %}
+
+{% block content %}
+
+<section class="error">
+    <h2 class="error__title">Page 500</h2>
+
+    <p>Something went wrong as there is an internal sever error!</p>
+
+    <a href="{% url 'home' %}" aria-label="Go to Home page" class="btn account__btn">Home page</a>
+
+</section>
+{% endblock %}
