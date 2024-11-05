@@ -1,6 +1,5 @@
 from django import forms
 from .models import Movies, Review
-from .models import Comment
 
 
 """ form for leaving a review """
@@ -9,11 +8,6 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ['title', 'content']
 
-""" form for movie commenting """
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ('body',)
 
 """ form for movie search and filter """
 class MovieSearchForm(forms.ModelForm):

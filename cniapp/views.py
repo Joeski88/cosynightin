@@ -6,7 +6,6 @@ from django.contrib.auth.decorators import login_required
 from django.utils.text import slugify
 import uuid
 from .models import Review
-from .forms import CommentForm
 from .models import Movies
 from .forms import MovieSearchForm, ReviewForm
 
