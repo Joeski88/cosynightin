@@ -63,18 +63,24 @@ CosyNightIn is an app that allows you to search for the perfect film to watch de
   
   - Home page will provide and carousel of trending movies currently availabble to stream, for potentially a quick decision in what to watch. All will contain an external rotten tomatoes link to provide extra details on each film.
 
-  - Once logged in the user will be able to use a variety of filters to use to streamline the result output and narrow down their search to make an easier choice.
 
-  - Users will have the option of leaving reviews and comments on other reviews made by other users.
+ ![features](/static/documentation/screenshots/carouselfeature.png)
 
+- The carousel is highlighted in the screenshot below, the next and prev pointers as well as the slide counter at the bottom.
 
-![loading Program](documentation/features/)
+ ![features](/static/documentation/screenshots/carouselpointerfeatures.png)
 
-![loading Program](documentation/features/)
+- The external link to rotten tomatoes is highlighted below.
 
-![loading Program](documentation/features/)
+ ![features](/static/documentation/screenshots/carouselrtlinkfeature.png)
 
-![loading Program](documentation/features/)
+- Once logged in the user will be able to use a variety of filters to use to streamline the result output and narrow down their search to make an easier choice.
+
+ ![features](/static/documentation/screenshots/filter.png)
+
+- Users will have the option of leaving reviews on movies they have watched. Below is a screen shot of me about to leave a review for one of my favorite comdey films "Step Brothers".
+
+ ![features](/static/documentation/screenshots/leavereview.png)
 
 ---
 
@@ -180,6 +186,18 @@ The relationships used in the application:
 
 *Bug*
 - Struggling to add the model, views and forms for users to have the ability to leave movie reviews.
+
+![Screenshot](/static/documentation/debugging/reviewbug1.png)
+![Screenshot](/static/documentation/debugging/reviewbug2.png)
+![Screenshot](/static/documentation/debugging/reviewbug3.png)
+
+*Solution*
+
+-These screenshots show the process and error encountered. to fix the first error message removed the "slug field" from the review model and encountered the next error message. I realised i had the wrong syntax for the slug field in the view file and needed to import 'slugify', shown in the screen shots below.
+
+![Screenshot](/static/documentation/debugging/reviewbugsolution1.png)
+![Screenshot](/static/documentation/debugging/reviewbugsolution2.png)
+
 
 *Solution*
 - Updated database to include movie_id in the reviews table as a foreign key in SQLite3 desktop app, pointing to the primary key id in the movies table. Then created a view model and form for the reviews, this included adding a review, via a form, adding a filter to extract all reviews for the specific movie, and display as part of the movie_detail view.

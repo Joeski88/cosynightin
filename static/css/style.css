@@ -1,3 +1,4 @@
+/* generic style across app */
 body {
     background-color: #314d85;
     display: flex;
@@ -14,19 +15,16 @@ body {
     font-weight: 700;
     color: #4A4A4F;
 }
-
 /* carousel content colour */
 .trendingfont {
     color: #e1dee6;
 }
-
+/*search filter styling */
 .filterstyling {
     position: absolute;
     justify-content: right;
 }
-
 /* standard html color styles */
-
 #navbarText {
     color: antiquewhite;
 }
@@ -133,7 +131,7 @@ body {
     margin-left: 5%;
     color: lightgray;
 }
-
+/* button & link styles */
 .btn-signup,
 .btn-edit {
     background-color: #188181;
@@ -244,12 +242,13 @@ body {
     padding-bottom: 1.25rem;
     color: antiquewhite;
     text-align: center;
-    position: static;
+    position: sticky;
     padding-right: 30px;
     padding-left: 30px;
     background-color: dimgrey;
-    opacity: 70%;
+    opacity: 90%;
     margin-top: 30px;
+    width: 50%;
 }
 
 /* home page title style */
@@ -263,7 +262,7 @@ body {
 /* film image style */
 .film-images {
     border-radius: 10px;
-    height: 98%;
+    height: 80%;
 }
 
 /* cni logo styling */
@@ -286,4 +285,15 @@ body {
 .loginpages {
     height: 100vh;
     color: antiquewhite;
+}
+
+/* review page styles */
+.review-container {
+    width: 100%;
+    margin-top: 200px;
+}
+
+/* movie results tab styles */
+.nav-tabs {
+    margin-top: 200px;
 }

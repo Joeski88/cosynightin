@@ -3,6 +3,8 @@ from django.views import generic
 from django.views import View
 from django.views.generic import TemplateView 
 from django.contrib.auth.decorators import login_required
+from django.utils.text import slugify
+import uuid
 from .models import Review
 from .forms import CommentForm
 from .models import Movies
@@ -25,7 +27,7 @@ def leave_review(request, movie_id):
             review = form.save(commit=False)
             review.author = request.user  # Set the current user as the author
             review.movie = movie  # Associate the review with the movie
-            review.slug = str(review.movie_id) + "-" + movie.movie_title
+            review.slug = f"{slugify(movie.movie_title)}-{uuid.uuid4().hex[:8]}"
             review.save()
             return redirect('movie_detail', pk=movie_id)  # Redirect to the movie detail page
     else:
@@ -93,7 +95,7 @@ class MovieDetailView(View):
 
     def get(self,request, pk):
         movie = get_object_or_404(Movies, pk=pk)
-        reviews = Reviews.objects.all()
+        reviews = Review.objects.all()
         reviews = reviews.filter(movie_id__exact=movie.id)
         context = {
             'movie': movie,

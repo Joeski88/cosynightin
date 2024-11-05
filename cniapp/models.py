@@ -50,7 +50,6 @@ class Review(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    movie_info = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
