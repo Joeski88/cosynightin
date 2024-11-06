@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Review, Comment
+from .models import Review
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Movies
 
@@ -13,5 +13,4 @@ class ReviewAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 
-admin.site.register(Comment)
 admin.site.register(Movies)

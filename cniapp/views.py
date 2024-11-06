@@ -3,20 +3,26 @@ from django.views import generic
 from django.views import View
 from django.views.generic import TemplateView 
 from django.contrib.auth.decorators import login_required
-from django.utils.text import slugify
-import uuid
 from .models import Review
 from .models import Movies
 from .forms import MovieSearchForm, ReviewForm
 
 
 """set which html template to use for home page """
-class HomePageView(generic.ListView):
-    queryset = Review.objects.all()
-    template_name = "cniapp/index.html"
 
+def HomePageView(request):
+    #queryset = Review.objects.all()
+    template_name = "cniapp/index.html"
+    movies = Movies.objects.all()
+#    if request.method == 'GET':
+    form = MovieSearchForm()
+    context = {'form': form,
+            'movies': movies,
+    }
+    return render(request, template_name, context) 
 
 """ Movie Review View """
+
 def leave_review(request, movie_id):
     movie = get_object_or_404(Movies, id=movie_id)
     
@@ -26,7 +32,7 @@ def leave_review(request, movie_id):
             review = form.save(commit=False)
             review.author = request.user  # Set the current user as the author
             review.movie = movie  # Associate the review with the movie
-            review.slug = f"{slugify(movie.movie_title)}-{uuid.uuid4().hex[:8]}"
+            review.slug = str(review.movie_id) + "-" + movie.movie_title
             review.save()
             return redirect('movie_detail', pk=movie_id)  # Redirect to the movie detail page
     else:
@@ -73,7 +79,7 @@ def MovieSearchView(request):
         if actors: 
             movies = movies.filter(actors__icontains=actors)
         if tomatometer_rating:
-            # added gt to stop filter sending only the specific rating provided by user 
+            # added gt to stop filter sending only the rating provided by user 
             movies = movies.filter(tomatometer_rating__gt=tomatometer_rating)    
             print(query, movies)
 
@@ -84,7 +90,7 @@ def MovieSearchView(request):
         context = {'form': form,
                 'movies': movies,
                 'reviews': reviews
-                    }
+        }
         return render(request, template_name, context) 
 
 """view for details provided from database"""
