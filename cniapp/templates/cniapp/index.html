@@ -4,82 +4,7 @@
 {% block content %}
 <!-- body content -->
 
-<body class="main-bg">
-
-    <!-- Modal Login -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login or Sign Up</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Tabs for Login and Sign Up -->
-                    <ul class="nav nav-tabs" id="loginSignUpTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login"
-                                type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup"
-                                type="button" role="tab" aria-controls="signup" aria-selected="false">Sign Up</button>
-                        </li>
-                    </ul>
-
-                    <!-- Tabs Content -->
-                    <div class="tab-content mt-3" id="loginSignUpTabContent">
-                        <!-- Login Form -->
-                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                            <form method="post" action="{% url 'account_login' %}">
-                                {% csrf_token %}
-                                <div class="mb-3">
-                                    <label for="login-username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="login-username" name="username"
-                                        required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="login-password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="login-password" name="password"
-                                        required>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Login</button>
-                            </form>
-                        </div>
-
-                        <!-- Sign Up Form -->
-                        <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
-                            <form method="post" action="{% url 'account_signup' %}">
-                                {% csrf_token %}
-                                <div class="mb-3">
-                                    <label for="signup-username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="signup-username" name="username"
-                                        required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="signup-email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="signup-email" name="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="signup-password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="signup-password" name="password1"
-                                        required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="signup-password-confirm" class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" id="signup-password-confirm"
-                                        name="password2" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Sign Up</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+<main class="main-bg">
     <!-- main title-->
     <h3 class="hometitle">Top Trending Movies To Stream</h3>
     <!-- carousel for home page -->
@@ -247,7 +172,7 @@
     </div>
 
     <!-- create container for the movie search-->
-    <div id="searchfilter" class="container w-100 search-form">
+    <div id="searchfilter" class="container modal-dialog-centered w-100 search-form">
         <div onClick="hideSearchForm()" class="close_btn">Close</div>
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
@@ -262,7 +187,7 @@
             </div>
         </div>
     </div>
-</body>
+</main>
 
 
 {% endblock %}

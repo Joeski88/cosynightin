@@ -68,7 +68,7 @@ class LeaveReviewViewTest(TestCase):
         self.assertEqual(Review.objects.count(), 0)
 
 
-class HomePageViewTest(TestCase):
+class home_page_viewTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         # Create some sample reviews for testing the home page

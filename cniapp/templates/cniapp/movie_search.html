@@ -3,122 +3,46 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
 <!-- Movie Search -->
-<main class="trendingfont mx-auto" id="searchfilter">
-    <!-- class main.bg adds background image to page -->
-
-    <body class="main-bg">
-        <!-- create container for the movie search-->
-        <div class="container w-100">
-            <div class="row">
-                <div class="col-md-8 mt-3 offset-md-2">
-                    <h1>Search For Your Movie</h1>
-                    <form method="get" action="{% url 'movie_search' %}" class="search-form">
-                        {{ form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit">Search</button>
-                        {% if movies %}
-                        <h2>Search results</h2>
-                        <div style="height: 500px; overflow: auto;">
-
-                            <!-- Nav style tab system for search results - bootstrap -->
-                            <ul class="nav nav-tabs" id="searchtabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="releasedate-tab" data-bs-toggle="tab"
-                                        href="#releasedate" role="tab" aria-controls="home" aria-selected="true">Release
-                                        Date</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="genre-tab" data-bs-toggle="tab" href="#genre" role="tab"
-                                        aria-controls="profile" aria-selected="false">Genre</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="rating-tab" data-bs-toggle="tab" href="#rating" role="tab"
-                                        aria-controls="messages" aria-selected="false">Rating</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="director-tab" data-bs-toggle="tab" href="#director"
-                                        role="tab" aria-controls="settings" aria-selected="false">Directors</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="actor-tab" data-bs-toggle="tab" href="#actor" role="tab"
-                                        aria-controls="settings" aria-selected="false">Actors</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="overview-tab" data-bs-toggle="tab" href="#overview"
-                                        role="tab" aria-controls="settings" aria-selected="false">Overview</a>
-                                </li>
-                            </ul>
-                            <!-- Tab content -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="releasedate" role="tabpanel"
-                                    aria-labelledby="release-tab">
-                                    <p><strong>Release Date: </strong>{{ movie.original_release_date }}</p>
-                                </div>
-                                <div class="tab-pane" id="genre" role="tabpanel" aria-labelledby="genre-tab">
-                                    <p><strong>Genre: </strong>{{ movie.genres }}</p>
-                                </div>
-                                <div class="tab-pane" id="rating" role="tabpanel" aria-labelledby="rating-tab">
-                                    <p><strong>Rating: </strong>{{ movie.tomatometer_rating }}</p>
-                                </div>
-                                <div class="tab-pane" id="director" role="tabpanel" aria-labelledby="director-tab">
-                                    <p><strong>Director: </strong>{{ movie.director }}</p>
-                                </div>
-                                <div class="tab-pane" id="actor" role="tabpanel" aria-labelledby="actor-tab">
-                                    <p><strong>Actors: </strong>{{ movie.actor }}</p>
-                                </div>
-                                <div class="tab-pane" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-                                    <p><strong>Overview: </strong>{{ movie.overview}}</p>
-                                </div>
-                            </div>
-                            <ul>
-                                {% for movie in movies %}
-                                <!-- data specified to be pulled from the database -->
-                                <li>
-                                    <a href="/movie/{{movie.id}}" target="_blank" aria-label="Link to film information">
-                                        <p><strong>Movie: </strong>{{ movie.movie_title }}
-                                    </a></p>
-                                    <p><a href="/movies/{{movie.id}}/review">Leave a Review</a></p>
-                                    <p><strong>Release Date: </strong>({{ movie.original_release_date}})<br></p>
-                                    <p><strong>Genre: </strong>{{ movie.genres }}<br></p>
-                                    <p><strong>Description: </strong>{{ movie.movie_info}}<br></p>
-                                    <p><strong>Director: </strong>{{ movie.directors}}<br></p>
-                                    <p><strong>Actors: </strong>{{ movie.actors}}<br></p>
-                                    <p><strong>Rating: </strong>{{ movie.tomatometer_rating}}<br></p>
-                                    </a>
-                                    <a href="https://www.rottentomatoes.com/{{movie.rotten_tomatoes_link}}"
-                                        aria-label="rottentomatoeslink" target="_blank">
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </form>
-                    <!-- If no results are found, bootstrap pop up modal -->
-                    {% elif form.is_bound %}
-                    <div class="modal" tabindex="-1" role="dialog">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Sad Times </h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>No Results Found, have another look!!! </p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Return to Search</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
+<!-- class main.bg adds background image to page -->
+<body class="main-bg">
+    
+    <main class="trendingfont mx-auto" id="searchresults">
+        
+        {% if movies %}
+        <h2>Search results</h2>
+        <div id="search_results_window">
+            <ul>
+                {% for movie in movies %}
+                <!-- data specified to be pulled from the database -->
+                <li>
+                    <a href="/movie/{{movie.id}}" target="_blank" aria-label="Link to film information">
+                        <p>
+                            <h3><strong>Movie: </strong>{{ movie.movie_title }}
+                    </a>
+                    </h3>
+                    </p>
+                    <p><a href="/movies/{{movie.id}}/review">Leave a Review</a></p>
+                    <p><strong>Release Date: </strong>({{ movie.original_release_date}})<br></p>
+                    <p><strong>Genre: </strong>{{ movie.genres }}<br></p>
+                    <p><strong>Description: </strong>{{ movie.movie_info}}<br></p>
+                    <p><strong>Director: </strong>{{ movie.directors}}<br></p>
+                    <p><strong>Actors: </strong>{{ movie.actors}}<br></p>
+                    <p><strong>Rating: </strong>{{ movie.tomatometer_rating}}<br></p>
+                    </a>
+                    <a href="https://www.rottentomatoes.com/{{movie.rotten_tomatoes_link}}"
+                        aria-label="rottentomatoeslink" target="_blank">
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-    </body>
-</main>
+        <!-- If no results are found -->
+        {% elif form.is_bound %}
+        <p>No Results Found.</p>
+        {% endif %}
+    </main>
+</body>
+
 
 {% endblock %}

@@ -4,6 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-image: url('/static/images/backgroundimage.jpeg');
     }
 
 .brand {
@@ -15,7 +16,7 @@ body {
 
 /* carousel content colour */
 .trendingfont {
-    color: #e1dee6;
+    color: antiquewhite;
 }
 
 .filterstyling {
@@ -24,7 +25,6 @@ body {
 }
 
 /* standard html color styles */
-
 #navbarText {
     color: antiquewhite;
 }
@@ -43,6 +43,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    height: 100%;
 }
 
 .card {
@@ -72,7 +73,7 @@ body {
 }
 
 .author {
-    color: white;
+    color: antiquewhite;
     margin: 4px;
     text-transform: uppercase;
 }
@@ -88,7 +89,7 @@ body {
 
 .masthead-text {
     background-color: #445261;
-    color: white;
+    color: antiquewhite;
     position: relative;
 }
 
@@ -189,12 +190,14 @@ body {
     position: fixed;
     top: 0;
     margin-top: 100px;
+    box-shadow: #fff 5px;
 }
 
 /* footer styling */
 .footer {
     width: 100%;
     bottom: 0px;
+    position: fixed;
 }
 
 /* search form styling */
@@ -209,12 +212,12 @@ body {
 #searchfilter {
     display: none;
     background-color: black;
-    color: white;
+    color: antiquewhite;
     opacity: 90%;
-    border-radius: 75px;
-    width: 60%;
+    border-radius: 10px;
+    width: 46%;
     margin-top: auto;
-    height: 100vh;
+    height: 50vh;
 }
 
 .search-form {
@@ -245,11 +248,35 @@ body {
 .carousel-caption {
     color: antiquewhite;
     text-align: left;
-    
     padding-right: 30px;
     padding-left: 30px;
-    background-color: dimgrey;
-    opacity: 70%;
+    margin-top: 60px;
+}
+
+.carousel-caption h4 {
+    color: antiquewhite;
+    padding: 10px;
+}
+
+.carousel-caption h5 {
+    color: antiquewhite;
+    padding: 10px;
+}
+
+.carousel-caption a {
+    font-size: large;
+    color: antiquewhite;
+    padding: 10px;
+}
+
+.carousel-caption p {
+    font-size: large;
+    color: antiquewhite;
+    padding: 10px;
+}
+
+.carousel-indicators {
+    display: none;
 }
 
 /* home page title style */
@@ -273,8 +300,9 @@ body {
 
 /* cni logo styling */
 .cnilogo {
-    max-width: 10px;
-    max-height: 10px;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 10px;
 }
 
 /* review form styling */
@@ -296,14 +324,14 @@ body {
 .close_btn{
     float: right; 
     padding: 10px; 
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #searchresults a {
-    color: white;
+    color: antiquewhite;
 } 
 #searchresults li {
-    color: white;
+    color: antiquewhite;
     border-bottom: solid 2px silver;
     background-color: rgba(0,0,0,0.2);
     padding: 20px;

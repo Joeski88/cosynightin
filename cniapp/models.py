@@ -32,7 +32,7 @@ class Movies(models.Model):
     tomatometer_rotten_critics_count = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'movies'
         ordering = ["-tomatometer_rating"]
 
@@ -51,9 +51,10 @@ class Review(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    movie_info = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         ordering = ["-created_on"]
         def __str__(self):
             return f"{self.title} | written by {self.author}"

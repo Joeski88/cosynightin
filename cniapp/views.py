@@ -10,11 +10,9 @@ from .forms import MovieSearchForm, ReviewForm
 
 """set which html template to use for home page """
 
-def HomePageView(request):
-    #queryset = Review.objects.all()
+def home_page_view(request):
     template_name = "cniapp/index.html"
     movies = Movies.objects.all()
-#    if request.method == 'GET':
     form = MovieSearchForm()
     context = {'form': form,
             'movies': movies,
@@ -44,7 +42,7 @@ def leave_review(request, movie_id):
 """view for search filter"""
 # login authentication and redirection path
 @login_required(login_url="/accounts/login/")
-def MovieSearchView(request):
+def movie_search_view(request):
     template_name = "cniapp/movie_search.html"
     # starts with all movies, then filters based on form input
     form = MovieSearchForm()

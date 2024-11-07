@@ -2,21 +2,23 @@
 {% load static %}
 
 {% block content %}
-<main class="trendingfont main-bg">
-    <!-- Search results for filtered user search -->
-    <body>
+<!-- Page to return movie details specified in the search -->
+<body>
+    <main class="trendingfont">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mt-3 offset-md-2 trendingfont">
+                    <!-- Code to pull data requested -->
                     <h1>{{ movie.title }}</h1>
-
-                </div>
-                <!-- link to send you back to original search page -->
-                <a href="{% url 'movie_search' }">Back to search.</a>
-                    
-                    <!-- Reviews on the site from other users -->
-                    <container class="review-container">
-                        <h2>Reviews for {{ movie.movie_title }}</h2>
+                    <p><strong>Release Date: </strong>{{ movie.original_release_date }}</p>
+                    <p><strong>Genre: </strong>{{ movie.genres }}</p>
+                    <p><strong>Rating: </strong>{{ movie.tomatometer_rating }}</p>
+                    <p><strong>Director: </strong>{{ movie.director }}</p>
+                    <p>{{ movie.overview}}</p>
+                    <!-- Href to return to search page -->
+                    <a href="{% url 'movie_search' }">Back to search.</a>
+                    <!-- Shows any reviews left by other users -->
+                    <h2>Reviews for {{ movie.movie_title }}</h2>
                                         <ul>
                                             {% for review in reviews %}
                                             <li>
@@ -28,12 +30,9 @@
                                             <li>No reviews yet. Be the first to leave one!</li>
                                             {% endfor %}
                                         </ul>
-                    </container>
-
                 </div>
             </div>
         </div>
-    </body>
 </main>
-
+</body>
 {% endblock %}
