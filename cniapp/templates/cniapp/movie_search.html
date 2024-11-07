@@ -11,7 +11,7 @@
     <main class="trendingfont mx-auto" id="searchresults">
         
         {% if movies %}
-        <h2>Search results</h2>
+        <h2>  Search results for "{{search_query}}"</h2>
         <div id="search_results_window">
             <ul>
                 {% for movie in movies %}
@@ -38,7 +38,7 @@
             </ul>
         </div>
         <!-- If no results are found -->
-        {% elif form.is_bound %}
+        {% else %}
         <p>No Results Found.</p>
         {% endif %}
     </main>

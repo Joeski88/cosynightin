@@ -7,6 +7,10 @@ body {
     background-image: url('/static/images/backgroundimage.jpeg');
     }
 
+main {
+    height: 100%;
+}
+
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -190,7 +194,6 @@ body {
     position: fixed;
     top: 0;
     margin-top: 100px;
-    box-shadow: #fff 5px;
 }
 
 /* footer styling */
@@ -218,6 +221,7 @@ body {
     width: 46%;
     margin-top: auto;
     height: 50vh;
+    z-index: 1000;
 }
 
 .search-form {

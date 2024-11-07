@@ -180,7 +180,7 @@
                 <form method="get" action="{% url 'movie_search' %}" class="search-form">
                     {{ form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" onClick="hideSearchForm();">Search</button>
+                    <button type="submit" class="btn btn-primary" onClick="hideSearchForm();">Search</button>
 
                 </form>
 

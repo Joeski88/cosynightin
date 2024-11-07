@@ -3,10 +3,22 @@ from django.views import generic
 from django.views import View
 from django.views.generic import TemplateView 
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 from .models import Review
 from .models import Movies
 from .forms import MovieSearchForm, ReviewForm
 
+
+def signin(request):
+    template_name = "cniapp/index.html"
+    username = request.POST["username"]
+    password = request.POST["password"]
+    print(username, password)
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        # Redirect to a success page.
+    return redirect("/")
 
 """set which html template to use for home page """
 
@@ -62,34 +74,40 @@ def movie_search_view(request):
         # Pulls all reviews
         reviews = Review.objects.all()
 
-        # check the query is being passed here
-        print("Query: ", query)
-
+        # collate query terms
+        full_search_query = []
         # filters to apply if provided
         if query:
             movies = movies.filter(movie_title__icontains=query)
+            full_search_query.append(query)
         if genre:
             movies = movies.filter(genres__icontains=genre)
+            full_search_query.append(genre)
         if release_date:
             movies = movies.filter(original_release_date__icontains=release_date)
+            full_search_query.append(release_date)
         if directors: 
             movies = movies.filter(directors__icontains=directors)
+            full_search_query.append(directors)
         if actors: 
             movies = movies.filter(actors__icontains=actors)
+            full_search_query.append(actors)
         if tomatometer_rating:
             # added gt to stop filter sending only the rating provided by user 
-            movies = movies.filter(tomatometer_rating__gt=tomatometer_rating)    
-            print(query, movies)
+            movies = movies.filter(tomatometer_rating__gt=tomatometer_rating)
+            full_search_query.append(tomatometer_rating)
 
         filtered_movies_count = movies.count()
         if filtered_movies_count == all_movies_count:
             movies = []
-        
+
         context = {'form': form,
                 'movies': movies,
-                'reviews': reviews
+                'reviews': reviews,
+                'search_query': " + ".join(full_search_query).rstrip(" + "),
         }
-        return render(request, template_name, context) 
+        return render(request, template_name, context)
+
 
 """view for details provided from database"""
 

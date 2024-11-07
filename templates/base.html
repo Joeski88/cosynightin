@@ -71,7 +71,7 @@
                     <div class="tab-content mt-3" id="loginSignUpTabContent">
                         <!-- Login Form -->
                         <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                            <form method="post" action="{% url 'account_login' %}">
+                            <form method="post" action="signin/">
                                 {% csrf_token %}
                                 <div class="mb-3">
                                     <label for="login-username" class="form-label">Username</label>
@@ -139,8 +139,8 @@
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link text-white {% if request.path == logout_url %}active{% endif %}"
-                                aria-label="logoutbutton" aria-current="page" href="{% url 'account_logout' %}"
-                                data-bs-toggle="modal" data-bs-target="#loginModal">| Logout |</a>
+                                aria-label="logoutbutton" aria-current="page" href="{% url 'account_logout' %}">| Logout
+                                |</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
@@ -155,9 +155,9 @@
                         </li>
                         {% endif %}
                         <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                            aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">| Search For Your
-                            Movie |</a>
+                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
+                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
+                                | Search For Your Movie |</a>
                         </li>
                     </ul>
                 </div>
@@ -179,15 +179,15 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">Created by Joe Howley</p>
-        <p class="m-0 text-center text-white">Follow us: 
-            <a href="https://en-gb.facebook.com/" target="_blank" rel="noopener noreferrer"
-            aria-label="facebooklink"><i class="fab fa-facebook-square ms-3"></i></a>
-            <a href="https://x.com/__x" target="_blank" rel="noopener noreferrer"
-            aria-label="twitterlink"><i class="fab fa-twitter-square ms-3"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
-            aria-label="instagramlink"> <i class="fab fa-instagram-square ms-3"></i></a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
-            aria-label="youtubelink"><i class="fab fa-youtube-square ms-3"></i></a>
+        <p class="m-0 text-center text-white">Follow us:
+            <a href="https://en-gb.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="facebooklink"><i
+                    class="fab fa-facebook-square ms-3"></i></a>
+            <a href="https://x.com/__x" target="_blank" rel="noopener noreferrer" aria-label="twitterlink"><i
+                    class="fab fa-twitter-square ms-3"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="instagramlink">
+                <i class="fab fa-instagram-square ms-3"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="youtubelink"><i
+                    class="fab fa-youtube-square ms-3"></i></a>
         </p>
     </footer>
 
