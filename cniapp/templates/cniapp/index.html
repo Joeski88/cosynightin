@@ -5,8 +5,14 @@
 <!-- body content -->
 
 <main class="main-bg">
+
+    <button type="submit" class="btn btn-primary searchbutton">
+        <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}" aria-label="searchbutton"
+            aria-current="page" onClick="showSearchForm();">
+            CLICK HERE TO START YOUR MOVIE SEARCH </a>
+    </button>
     <!-- main title-->
-    <h3 class="hometitle">Top Trending Movies To Stream</h3>
+    <h3 class="hometitle mx-auto">Top Trending Movies To Stream</h3>
     <!-- carousel for home page -->
     <div id="homepagecarousel" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
@@ -23,154 +29,116 @@
         </ol>
         <!-- carousel content -->
         <div class="carousel-inner h-50">
-            <div class="carousel-item active h-50">
-                <img class="d-inline w-25 film-images" src="/static/images/akillersmemory.jpg" alt="First slide">
-                <div class="carousel-caption d-md-block right-panel">
+            <div class="carousel-item active h-100">
+                <div>
+                    <img class="d-inline img-fluid mx-auto h-50 film-images" src="/static/images/akillersmemory.jpg"
+                    alt="First slide">
+                </div>
+                <div class="carousel-caption d-md-block">
                     <h4 class="trendingfont">Knox Goes Away</h4>
                     <h5>Amazon Prime</h5>
                     <a href="https://www.rottentomatoes.com/m/knox_goes_away" target="_blank" rel="noopener noreferrer"
                         aria-label="rottentomatoeslink">
                         https://www.rottentomatoes.com/m/knox_goes_away</a>
-                        <button type="submit" class="btn btn-primary searchbutton">
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-                        </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-inline w-25 film-images" src="/static/images/challengers.png" alt="Second slide">
-                <div class="carousel-caption d-md-block right-panel">
+                <img class="d-inline img-fluid mx-auto h-50 film-images" src="/static/images/challengers.png"
+                    alt="Second slide">
+                <div class="carousel-caption d-md-block">
                     <h4>Challengers</h4>
                     <h5>Amazon Prime</h5>
                     <a href="https://www.rottentomatoes.com/m/challengers_2024" target="_blank"
                         rel="noopener noreferrer" aria-label="rottentomatoeslink">
                         https://www.rottentomatoes.com/m/challengers_2024</a>
-                        <button type="submit" class="btn btn-primary searchbutton"></button>
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-                        </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-25 film-images" src="/static/images/insideout2.jpg" alt="Third Slide">
-                <div class="carousel-caption d-md-block right-panel">
+                <img class="d-block img-fluid mx-auto h-50 film-images" src="/static/images/insideout2.jpg"
+                    alt="Third Slide">
+                <div class="carousel-caption d-md-block">
                     <h4>Inside Out 2</h4>
                     <h5>Disney+</h5>
                     <a href="https://www.rottentomatoes.com/m/inside_out_2" target="_blank" rel="noopener noreferrer"
                         aria-label="rottentomatoeslink">
                         https://www.rottentomatoes.com/m/inside_out_2</a>
-                        <button type="submit" class="btn btn-primary searchbutton"></button>
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-                        </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-25 film-images" src="/static/images/itswhatsinside.jpg" alt="Fourth Slide">
-                <div class="carousel-caption d-md-block right-panel">
+                <img class="d-block img-fluid mx-auto h-50 film-images" src="/static/images/itswhatsinside.jpg"
+                    alt="Fourth Slide">
+                <div class="carousel-caption d-md-block">
                     <h4>It's Whats Inside</h4>
                     <h5>Netflix</h5>
                     <a href="https://www.rottentomatoes.com/m/its_whats_inside" target="_blank"
                         rel="noopener noreferrer" aria-label="rottentomatoeslink">
                         https://www.rottentomatoes.com/m/its_whats_inside</a>
-                        <button type="submit" class="btn btn-primary searchbutton"></button>
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-                        </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-25 film-images" src="/static/images/killerheat.jpg" alt="Fifth Slide">
-                <div class="carousel-caption d-md-block right-panel">
+                <img class="d-block img-fluid mx-auto h-50 film-images" src="/static/images/killerheat.jpg"
+                    alt="Fifth Slide">
+                <div class="carousel-caption d-md-block">
                     <h4>Killer Heat</h4>
                     <h5>Amazon Prime</h5>
                     <a href="https://www.rottentomatoes.com/m/killer_heat" target="_blank" rel="noopener noreferrer"
                         aria-label="rottentomatoeslink">
                         https://www.rottentomatoes.com/m/killer_heat</a>
-                        <button type="submit" class="btn btn-primary searchbutton"></button>
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-                        </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-25 film-images" src="/static/images/kingdom.jpg" alt="Sixth Slide">
-                <div class="carousel-caption d-md-block right-panel">
+                <img class="d-block img-fluid mx-auto h-50 film-images" src="/static/images/kingdom.jpg"
+                    alt="Sixth Slide">
+                <div class="carousel-caption d-md-block">
                     <h4>Kingdom of The Planet of The Apes</h4>
                     <h5>Disney+</h5>
                     <a href="https://www.rottentomatoes.com/m/kingdom_of_the_planet_of_the_apes" target="_blank"
                         rel="noopener noreferrer" aria-label="rottentomatoeslink">
                         https://www.rottentomatoes.com/m/kingdom_of_the_planet_of_the_apes</a>
-                        <button type="submit" class="btn btn-primary searchbutton"></button>
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-                        </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-25 film-images" src="/static/images/rebelridge.jpg" alt="Seventh Slide">
-                <div class="carousel-caption d-md-block right-panel">
+                <img class="d-block img-fluid mx-auto h-50 film-images" src="/static/images/rebelridge.jpg"
+                    alt="Seventh Slide">
+                <div class="carousel-caption d-md-block">
                     <h4>Rebel Ridge</h4>
                     <h5>Netflix</h5>
                     <a href="https://www.rottentomatoes.com/m/rebel_ridge" target="_blank" rel="noopener noreferrer"
                         aria-label="rottentomatoeslink">
                         https://www.rottentomatoes.com/m/rebel_ridge</a>
-                        <button type="submit" class="btn btn-primary searchbutton"></button>
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-                        </button>
                 </div>
             </div>
             <div class="carousel-item carousel-size">
-                <img class="d-block w-25 film-images" src="/static/images/theinstigators.jpg" alt="Eighth Slide">
-                <div class="carousel-caption d-md-block right-panel">
+                <img class="d-block img-fluid mx-auto h-50 film-images" src="/static/images/theinstigators.jpg"
+                    alt="Eighth Slide">
+                <div class="carousel-caption d-md-block">
                     <h4>The Instigators</h4>
                     <h5>Apple TV+</h5>
                     <a href="https://www.rottentomatoes.com/m/the_instigators" target="_blank" rel="noopener noreferrer"
                         aria-label="rottentomatoeslink">
                         https://www.rottentomatoes.com/m/the_instigators</a>
-                        <button type="submit" class="btn btn-primary searchbutton"></button>
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-                        </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-25 film-images" src="/static/images/menendezbros.jpg" alt="Ninth Slide">
-                <div class="carousel-caption d-md-block right-panel">
+                <img class="d-block img-fluid mx-auto h-50 film-images" src="/static/images/menendezbros.jpg"
+                    alt="Ninth Slide">
+                <div class="carousel-caption d-md-block">
                     <h4>The Menendez Brothers</h4>
                     <h5>Netflix</h5>
                     <a href="https://www.rottentomatoes.com/m/the_menendez_brothers" target="_blank"
                         rel="noopener noreferrer" aria-label="rottentomatoeslink">
                         https://www.rottentomatoes.com/m/the_menendez_brothers</a>
-                        <button type="submit" class="btn btn-primary searchbutton"></button>
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-                        </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-25 film-images" src="/static/images/wolfs.jpg" alt="Tenth Slide">
-                <div class="carousel-caption d-md-block right-panel">
+                <img class="d-block img-fluid mx-auto h-50 film-images" src="/static/images/wolfs.jpg"
+                    alt="Tenth Slide">
+                <div class="carousel-caption d-md-block">
                     <h4 class="card-title">Wolfs</h4>
                     <h5>Apple TV+</h5>
                     <a href="https://www.rottentomatoes.com/m/wolfs" target="_blank" rel="noopener noreferrer"
                         aria-label="rottentomatoeslink">
                         https://www.rottentomatoes.com/m/wolfs</a>
-                        <button type="submit" class="btn btn-primary searchbutton"></button>
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-                        </button>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#homepagecarousel" role="button" data-bs-target="#homepagecarousel"
@@ -185,9 +153,9 @@
             </a>
         </div>
     </div>
-
     <!-- create container for the movie search-->
-    <div id="searchfilter" class="container modal-dialog-centered w-100 search-form">
+    <div id="searchfilter" class="
+    modal-dialog-centered mx-auto w-100 search-form">
         <div onClick="hideSearchForm()" class="close_btn">Close</div>
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
@@ -196,9 +164,7 @@
                     {{ form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-primary" onClick="hideSearchForm();">Search</button>
-
                 </form>
-
             </div>
         </div>
     </div>
