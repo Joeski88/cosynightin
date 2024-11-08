@@ -144,21 +144,11 @@
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link text-white {% if request.path == signup_url %}active{% endif %}"
-                                aria-label="registerbutton" aria-current="page" href="{% url 'account_signup' %}">|
-                                Register |</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-white {% if request.path == login_url %}active{% endif %}"
                                 aria-label="loginbutton" aria-current="page" data-bs-toggle="modal"
                                 data-bs-target="#loginModal" href="{% url 'account_login' %}">| Login |</a>
                         </li>
                         {% endif %}
-                        <li class="nav-item">
-                            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
-                                aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                                | Search For Your Movie |</a>
-                        </li>
                     </ul>
                 </div>
             </div>

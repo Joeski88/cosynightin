@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     justify-content: center;
     background-image: url('/static/images/backgroundimage.jpeg');
+    height: 100% !important;
     }
 
 main {
@@ -193,7 +194,9 @@ main {
 .header {
     position: fixed;
     top: 0;
-    margin-top: 100px;
+    left: 0;
+    width: 100%;
+    margin-top: 100px !important;
 }
 
 /* footer styling */
@@ -218,9 +221,9 @@ main {
     color: antiquewhite;
     opacity: 90%;
     border-radius: 10px;
-    width: 46%;
+    width: 100% !important;
     margin-top: auto;
-    height: 50vh;
+    height: 100% !important;
     z-index: 1000;
 }
 
@@ -249,26 +252,31 @@ main {
 }
 /*custom css for carousel content*/
 
+.carousel-item {
+    height: 100vh !important;
+}
+
 .carousel-caption {
     color: antiquewhite;
     text-align: left;
-    padding-right: 30px;
-    padding-left: 30px;
     margin-top: 60px;
 }
 
 .carousel-caption h4 {
     color: antiquewhite;
     padding: 10px;
+    background-color: #312a92;
+    border-radius: 5px;
 }
 
 .carousel-caption h5 {
     color: antiquewhite;
     padding: 10px;
+    background-color: cornflowerblue;
+    border-radius: 5px;
 }
 
 .carousel-caption a {
-    font-size: large;
     color: antiquewhite;
     padding: 10px;
 }
@@ -294,13 +302,10 @@ main {
 .film-images {
     border-radius: 10px;
     margin-left: 25%;
-    max-height: 50%;    
+    min-height: 50%;
+    min-width: 10%;
 }
 
-.carousel-item {
-    max-height: 42%;    
-    overflow: hidden;
-}
 
 /* cni logo styling */
 .cnilogo {
@@ -348,4 +353,9 @@ main {
 #search_results_window {
     height: 585px; 
     overflow: auto;
+}
+
+.searchbutton {
+    margin-top: 75px;
+    margin-left: 30px;
 }
