@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2>{{ review.title }}</h2>
+  <p>Written by: {{ review.author }}</p>
+  <p>{{ review.content }}</p>
+  <p>Created on: {{ review.created_on }}</p>
+
+  <a href="{% url 'review_update' review.id %}">Edit</a> |
+  <a href="{% url 'review_delete' review.id %}">Delete</a>
+{% endblock %}

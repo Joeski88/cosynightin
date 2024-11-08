@@ -1,38 +1,48 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <!-- Page to return movie details specified in the search -->
+
 <body>
     <main class="trendingfont">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 mt-3 offset-md-2 trendingfont">
+                <div class="col-md-8 mt-2 offset-md-1 trendingfont">
                     <!-- Code to pull data requested -->
-                    <h1>{{ movie.title }}</h1>
-                    <p><strong>Release Date: </strong>{{ movie.original_release_date }}</p>
+                    <h1>{{ movie.movie_title }}</h1>
                     <p><strong>Genre: </strong>{{ movie.genres }}</p>
                     <p><strong>Rating: </strong>{{ movie.tomatometer_rating }}</p>
-                    <p><strong>Director: </strong>{{ movie.director }}</p>
-                    <p>{{ movie.overview}}</p>
+                    <p><strong>Description: </strong>{{ movie.movie_info}}</p>
+                    <p><strong>Release Date: </strong>{{ movie.original_release_date }}</p>
+                    <p><strong>Director: </strong>{{ movie.directors }}</p>
+                    <p><strong>Actors: </strong>{{ movie.actors }}</p>
+
                     <!-- Href to return to search page -->
-                    <a href="{% url 'movie_search' }">Back to search.</a>
+                    <a class="btn btn-primary" href="/">Back</a>
+
+                </div>
+                <div class="col-md-2 mt-2 offset-md-1 trendingfont">
                     <!-- Shows any reviews left by other users -->
-                    <h2>Reviews for {{ movie.movie_title }}</h2>
-                                        <ul>
-                                            {% for review in reviews %}
-                                            <li>
-                                                <strong>{{ review.title }}</strong> by {{ review.author }}<br>
-                                                {{ review.content }}<br>
-                                                <small>Posted on {{ review.created_on }}</small>
-                                            </li>
-                                            {% empty %}
-                                            <li>No reviews yet. Be the first to leave one!</li>
-                                            {% endfor %}
-                                        </ul>
+                    <h4>Reviews for {{ movie.movie_title }}</h4>
+                    <p>Number of Reviews: {{ movie.review_count }}</p> <!-- Display the review count -->
+
+                    <ul style="overflow: auto;">
+                        {% for review in reviews %}
+                        <li>
+                            <strong>{{ review.title }}</strong> by {{ review.author }}<br>
+                            {{ review.content }}<br>
+                            <small>Posted on {{ review.created_on }}</small>
+                        </li>
+                        {% empty %}
+                        <li>No reviews yet. Be the first to leave one!</li>
+                        <p><a href="/movie/{{movie.id}}/review/add">Leave a Review</a></p>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
-</main>
+    </main>
 </body>
 {% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="text-white reviewform" style="width: 100%;">
+  <h3>Leave a Review for "{{ movie_title }}"</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <button type="submit" class="btn btn-primary">Save Review</button>
+    <a class="btn btn-primary" href="/">Back</a>
+  </form>
+</div>
+<div class="userreviews">
+  <!-- Shows any reviews left by other users -->
+  <h4>Latest Reviews</h4>
+  <ul style="overflow: auto; height: 500px;">
+    {% for review in reviews %}
+    <li style="border-bottom: solid 2px silver;">
+      <small>{{ review.created_on }}</small><br><strong>{{ review.title }}</strong> by {{ review.author }} <br>
+      {{ review.content }}<br>
+
+    </li>
+    {% empty %}
+
+
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}
