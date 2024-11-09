@@ -1,14 +1,14 @@
 # CosyNightIn - Film finder
 
-![Responsive Mockup](documentation/features/)
+![Responsive Mockup](/static/documentation/screenshots/homepagemockup.png)
 
 *The link to [CosyNightIn](https://8000-joeski88-cosynightin-e6en1er8oxr.ws.codeinstitute-ide.net/)*
 
 ## About
 
-CosyNightIn is an app that allows you to search for the perfect film to watch depending on your mood, it will use a varity of filters to narrow down the choice and provide a relaxed way to pick what to watch. The results will be ordered based on rating with highest rated at the top (highest ating = most recommended).
+CosyNightIn is an app that allows you to search for the perfect film to watch depending on your mood, it will use a varity of filters to narrow down the choice and provide a relaxed way to pick what to watch. The results will be ordered based on rating with highest rated at the top (highest rating = most recommended).
 
----
+-------
 
 ## User Experience Design
 
@@ -16,88 +16,120 @@ CosyNightIn is an app that allows you to search for the perfect film to watch de
 
 * The aim of this app is to give users a platform to be able to search and filter a movie database to find themselves a film to watch. It's desgined to be easy and quick to use, while also providing all the information needed to make an informed decision and pick the perfect movie for your evening.  
 
----
+-------
 
 ### Target Audience
 
 * The app is aimed at anyone movie lovers, family, friends and partners that you always seem to argue with about what to watch.
 
-
+--------
 
 ## User Stories
 ### First Time Visitor Goals:
 
 | Issue ID    | User Story |
 |-------------|-------------|
-|[#1](https://github.com/Joeski88/cosynightin/issues/17)| As a First Time Visitor, I want to be able to easily creat an account to be able to access the main features of the app.|
-
+|[#1](https://github.com/Joeski88/cosynightin/issues/17)| As a First Time Visitor, I want to be able to easily create an account to be able to access the main features of the app.|
 |[#2](https://github.com/Joeski88/cosynightin/issues/18)|As a First Time Visitor, I want to be able to find and discover films to watch based on how im feeling and what kind of mood im in.|
 |[#3](https://github.com/Joeski88/cosynightin/issues/3)|As a First Time Visitor, I want to be able to easily log out of my account for security reasons, after I have found the film I want to watch.|
 |[#4](https://github.com/Joeski88/cosynightin/issues/4)|As a First Time Visitor, I want to be able to see detailed information of each film I look at to be able to make an informed decision on what to watch.|
-|[#5](https://github.com/Joeski88/cosynightin/issues/7)|As a First Time Visitor, I want to be able to see detailed information of each film I look at via a link to the rotten tomatoes page (opened in a different tab) to be able to make an even more informed decision on what to watch.|
 |[#6](https://github.com/Joeski88/cosynightin/issues/15)|As a First Time Visitor, I want to be able to use filters to streamline my search to narrow down the results to make my decision easier to make.|
 |[#7](https://github.com/Joeski88/cosynightin/issues/10)|As a First Time Visitor, I want to be able to have the ability to read reviews of other users to help aid me make my decision.|
 
+--------
 
 ### Frequent Visitor Goals:
 
 | Issue ID    | User Story |
 |-------------|-------------|
-|[#1](https://github.com/Joeski88/cosynightin/issues/1)|As a Frequent Visitor, I want to be able to easily be able to reset my password if i have forgotten my details to be able to access my account whenever needed. |
-|[#2](https://github.com/Joeski88/cosynightin/issues/8)|As a Frequent Visitor, I want to be able to rate films ive watched to help other users make a decision.|
-|[#3](https://github.com/Joeski88/cosynightin/issues/9)|As a Frequent Visitor, I want to be able to comment on reviews left by others to agree with or disagree with other users and offer my insight too. Also to thank others who leave comments on my reviews. |
+|[#2](https://github.com/Joeski88/cosynightin/issues/8)|As a Frequent Visitor, I want to be able to review films ive watched to help other users make a decision.|
+|[#3](https://github.com/Joeski88/cosynightin/issues/21)|As a Frequent Visitor, I want to be able to edit or delete my reviews, incase i have changed my mind or regret my post. |
 |[#4](https://github.com/Joeski88/cosynightin/issues/5)|As a Frequent Visitor, I want to be able to search using keywords or film titles to get information on specific films i could potentially watch. |
 |[#5](https://github.com/Joeski88/cosynightin/issues/6)|As a Frequent Visitor, I want to be able to search using actor and actress names to get information on specific films i could potentially watch. |
 |[#6](https://github.com/Joeski88/cosynightin/issues/12)|As a Frequent Visitor, I want to be able to filter by film rating (provided by rotten tomatoes) to narrow down the search for what I want. |
 |[#7](https://github.com/Joeski88/cosynightin/issues/11)|As a Frequent Visitor, I want to be able to search using specfic genre names to get information on specific films i could potentially watch. |
 
+--------
+
 ### Admin Goals:
 
 | Issue ID    | User Story |
 |-------------|-------------|
-|[#1](https://github.com/Joeski88/cosynightin/issues/13)| As an admin user, I want to be able to easily understand the main purpose of the app, so that I can learn more about this app. |
+|[#1](https://github.com/Joeski88/cosynightin/issues/13)| As an admin user, I want to be able to easily be able to access the admin panel provided by django to control the flow of data input to the app. |
 |[#2](https://github.com/Joeski88/cosynightin/issues/20)|As an admin user, I want to be able to add and approve new members/users so that I can manage the account and ensure the process and app is clean and restrict an abusive behaviour/language. |
+|[#2](https://github.com/Joeski88/cosynightin/issues/20)| As an admin user, I want to be able to control the flow of content added to the application via the django admin app. | 
 
----
+--------
 
 ## Features
   
-  - Home page will provide and carousel of trending movies currently availabble to stream, for potentially a quick decision in what to watch. All will contain an external rotten tomatoes link to provide extra details on each film.
-
+  - Home page will provide and carousel of trending movies currently available to stream, for potentially a quick decision in what to watch. All will contain an external rotten tomatoes link to provide extra details on each film.
 
  ![features](/static/documentation/screenshots/carouselfeature.png)
+
+ -------
 
 - The carousel is highlighted in the screenshot below, the next and prev pointers as well as the slide counter at the bottom.
 
  ![features](/static/documentation/screenshots/carouselpointerfeatures.png)
 
-- The external link to rotten tomatoes is highlighted below.
-
- ![features](/static/documentation/screenshots/carouselrtlinkfeature.png)
+ -------
 
 - Once logged in the user will be able to use a variety of filters to use to streamline the result output and narrow down their search to make an easier choice.
 
  ![features](/static/documentation/screenshots/filter.png)
 
+ -------
+
 - Users will have the option of leaving reviews on movies they have watched. Below is a screen shot of me about to leave a review for one of my favorite comdey films "Step Brothers".
 
  ![features](/static/documentation/screenshots/leavereview.png)
 
----
+ -------
 
-## Flowchart & Entity Relationship Diagrams
+- Users will have the option to edit or delete reviews made at a previous time. 
+
+- Users access this feature by clicking on their 'profile' button on the nav bar.
+
+- Users are provided with their account information at the top of their 'profile' page.
+
+![features](/static/documentation/screenshots/editreview.png)
+
+![features](/static/documentation/screenshots/navbarreview.png)
+
+-------
+
+- Users are able to view more detailed information on each movie and in the same window they are able to view all previously made reviews on that particular movie.
+
+![features](/static/documentation/screenshots/movieinfo.png)
+
+-------
+
+## Future Features
+
+This project has been a huge challenge for me personally, coming from 0 knowledge of coding previous to beginning this course, this one was a huge step up from the previous projects I have taken on. With that in mind, it was inevitable i was not going to be able to achieve all the features I intended to include. They are listed below as future features:
+  
+  - In future developments I would like to inclulde the option to allow the user to comment on other & their own reviews.
+
+  - In future developments I would like to inclulde a wish list feature, where users would add desired films to a list that is only visible via their own personal profile, so they can que up films they wish to watch in the future. 
+
+  - In future developments I would like to inclulde the ability for a user to 'like' other users comments.
+
+  - In future developments I would like to regularly deploy updates with new films and new releases upcoming. 
+
+## Flowchart & Entity Relationship Diagram
 
 The flowchart represents the logic of the application:
 
   ![Flow chart Page](/static/images/flowchartprocess.png)
 
----
+-------
 
 The entity relationship diagrams for all models used in the application:
 
   ![ERDscreenshots](/static/images/erdiagrams.png)
 
----
+-------
 
 The relationships used in the application:
 
@@ -126,17 +158,13 @@ The relationships used in the application:
 - [SQLite](https://www.sqlite.org/): was used to store rotten tomatoes database.
 - [PostgreSQL](https://www.postgresql.org/): the database used to store all the data on admin side.
 
-##### Standard library imports:
-
-##### Third-party imports:
-
 #### Other tools:
 
 - [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
 - [Git](https://git-scm.com/) was used for the version control of the website.
 - [GitHub](https://github.com/) was used to host the code of the website.
 - [Techsini](https://techsini.com/) used to create the head mock up picture for the readme.
-- [Miro](https://miro.com/app/dashboard/) was used to make a flowchart for project planning and the README file.
+- [Miro](https://miro.com/app/dashboard/) was used to make a flowchart and ERD's for project planning and the README file.
 - [Gitpod](https://gitpod.io/workspaces) was used to create the workspaces.
 - [Heroku](https://id.heroku.com/) Used to deploy finished project.
 - [CIlintercheck](https://pep8ci.herokuapp.com/) Code institute Linter validator for python. Used to validate all python files.
@@ -160,11 +188,17 @@ The relationships used in the application:
 
 ## Bugs
 
+- Throughout this project I have encountered many, many bugs, as this is the first time I have encountered many of the techniques used in this project. I have used many tools and relied on the help of the support provided by the CI team to help me through. It will have been impossible (and very long winded) for me to have provided information on each and every single bug I came accross on my journey throughout this project, so I have provided a few for you to see below. 
+
+--------
+
 *Bug*
 - Initial heroku deployment returned an error message. (solution - I forgot to add the Procfile before initial deployment)
 
 *solution:*
 ![Screenshot](/static/documentation/debugging/procfilesolution.png)
+
+--------
 
 *Bug*
 - When trying to add the filter models/view to the browser, the code was running without an error but the view didnt appear in the browser. 
@@ -173,10 +207,15 @@ The relationships used in the application:
 - I forgot to add the model to admin.py therefore it wasnt looking for it.
 ![Screenshot](/static/documentation/debugging/adminsolution.png)
 
+--------
+
 *Bug*
 - Struggled to connect external database to app using sqlite db.
 
 *Solution*
+??????????????????????????
+
+--------
 
 *Bug*
 - Was unable to add a background image due to the file type being ".svg" had to download a file type converter online to convert to a .jpeg. This solved the issue. 
@@ -184,6 +223,8 @@ The relationships used in the application:
 
 *Solution:*
 ![Screenshot](/static/documentation/debugging/bgimagesolution.png)
+
+--------
 
 *Bug*
 - Struggling to add the model, views and forms for users to have the ability to leave movie reviews.
@@ -203,11 +244,15 @@ The relationships used in the application:
 *Solution*
 - Updated database to include movie_id in the reviews table as a foreign key in SQLite3 desktop app, pointing to the primary key id in the movies table. Then created a view model and form for the reviews, this included adding a review, via a form, adding a filter to extract all reviews for the specific movie, and display as part of the movie_detail view.
 
+--------
+
 *Bug*
 - Bootstrap carousel and search filter pushing header and footer off the page. 
 
 *Solution*
 - Added 100vh to the main and removed the position on the footer.
+
+--------
 
 *Bug*
 - Log in/out & sign up html pages not inheriting the base html as they should in regards to styles (background image and font colours etc) despite the static files being loaded at the top of the page.
@@ -215,12 +260,7 @@ The relationships used in the application:
 *Solution* 
 - Forgot to add the ".main-bg" class to the main of each html page, including the log in and log out pages. 
 
-
-## Information Architecture
-
-### Database
-### Data Modelling
-
+--------
 
 ## Design
 
@@ -229,6 +269,8 @@ The relationships used in the application:
 The Color scheme I decided to use was a dark Navy Blue as the main colour. the shapes I used a RGB color index to find the suitable colors for the effect I wanted.
 
 ![Screenshot](/static/documentation/screenshots/backgroundcolourscheme.png)
+
+--------
 
 ### Typeography
 
@@ -240,7 +282,9 @@ The backup font made available is called Lato [googlefonts](https://fonts.google
 
 ![Screenshot](/static/documentation/screenshots/font1.png)
 
-They were picked as they are good for most styles of app and have a clear letter definition which makes it easy to read throughout the app. 
+They were picked as they are good for most styles of app and have a clear letter definition which makes it easy to read throughout the app.
+
+--------
 
 ### Imagery
 
@@ -250,27 +294,27 @@ The background image was designed on [BGjar](https://bgjar.com/colored-shapes).
 
 The CNI logo used in the Header is also a custom design using [Canva](https://www.canva.com/).
 
+--------
+
 ### Wire Frames
 
 - Home Page
 
 ![Screenshot](/static/documentation/screenshots/homepagewf.png)
 
+--------
+
 - Search Filter Page
 
 ![Screenshot](/static/documentation/screenshots/filterpagewf.png)
+
+--------
 
 - Search Results Page
 
 ![Screenshot](/static/documentation/screenshots/searchresultswf.png)
 
-
-## Testing
-
-
-- Testing was carried out using the CI Linter check web page [CI Linter Validation](https://pep8ci.herokuapp.com/#)
-
-- Please see below for validation screen shots.
+--------
 
 ## Validation
 
@@ -278,16 +322,7 @@ The CNI logo used in the Header is also a custom design using [Canva](https://ww
 
 [Validation PDF](static/documentation/validation/validations.pdf)
 
-
-### run.py Linter Validation
-
-![Screenshot](documentation/validation/)
-
-### player.py Linter Validation
-![Screenshot](documentation/validation/)
-
-### words.py Linter Validation
-![Screenshot](documentation/validation/)
+--------
 
 ## Manual testing
 
@@ -383,6 +418,7 @@ Create a local copy of the GitHub repository by following one of the two process
         - ![Deploy](documentation/deployment/deploy.png)
   17. Click "Open app" to launch the application inside a web page.
 
+--------
 
 ## Credits
 
@@ -391,9 +427,11 @@ Create a local copy of the GitHub repository by following one of the two process
 - Kaggle [Kaggle](https://www.kaggle.com/datasets?search=rotten+tomatoes) Database hub that I pulled the movie databse from.
 - Bootstrap [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) Used Bootstrap documentation to help guid me to the correct code to use and what its for.
 
-
+--------
 
 ## Acknowledgements
 - My Mentor Iuliia Konovalova. I had issues with the help i was recieving with my previous mentor, 
   but i noticed a huge difference with the way Julia spoke to me and how she managed my situation, 
-  she deserves alot of credit and praise for 
+  she deserves alot of credit and praise for.
+
+--------

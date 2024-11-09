@@ -28,8 +28,12 @@ class Movies(models.Model):
     audience_rating = models.IntegerField(blank=True, null=True)
     audience_count = models.IntegerField(blank=True, null=True)
     tomatometer_top_critics_count = models.IntegerField(blank=True, null=True)
-    tomatometer_fresh_critics_count = models.IntegerField(blank=True, null=True)
-    tomatometer_rotten_critics_count = models.IntegerField(blank=True, null=True)
+    tomatometer_fresh_critics_count = models.IntegerField(
+        blank=True, null=True
+    )
+    tomatometer_rotten_critics_count = models.IntegerField(
+        blank=True, null=True
+    )
 
     class Meta:
         managed = True
@@ -41,11 +45,16 @@ class Movies(models.Model):
 
 
 class Review(models.Model):
-    """ Review Model """ 
+    """ Review Model """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="film_review")
-    movie = models.ForeignKey(Movies, on_delete=models.CASCADE, related_name="Reviews")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="film_review"
+    )
+    movie = models.ForeignKey(
+        Movies, on_delete=models.CASCADE, related_name="Reviews"
+    )
+
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
@@ -67,13 +76,19 @@ class Review(models.Model):
 
 class Comment(models.Model):
     """ Comment model """
-    review = models.ForeignKey('Review', on_delete=models.CASCADE, related_name="comments")
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
+    review = models.ForeignKey(
+        'Review', on_delete=models.CASCADE, related_name="comments"
+    )
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter"
+    )
+
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ["-created_on"]
+
         def __str__(self):
             return f"Comment {self.body} by {self.author}"

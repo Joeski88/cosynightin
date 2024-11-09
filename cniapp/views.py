@@ -152,7 +152,6 @@ def movie_search_view(request):
         if tomatometer_rating:
             # added gt to stop filter sending only the rating provided by user
             movies = movies.filter(tomatometer_rating__gt=tomatometer_rating)
-            print(query, movies)
             full_search_query.append(tomatometer_rating)
 
         filtered_movies_count = movies.count()
@@ -162,8 +161,9 @@ def movie_search_view(request):
         topn = 10  # Return just the first 10 actors
         for movie in movies:
             if movie.actors:
-                movie.actors = ", ".join(movie.actors.split(',')
-                                         [:topn]).rstrip(",")
+                movie.actors = ", ".join(
+                    movie.actors.split(',')[:topn]
+                ).rstrip(",")
 
         context = {
             'form': form,
@@ -180,8 +180,8 @@ class MovieDetailView(View):
     template_name = "cniapp/movie_detail.html"
 
     def get(self, request, pk):
-        movie = get_object_or_404(Movies.objects.annotate
-                                  (review_count=Count('Reviews')), pk=pk)
+        movie = get_object_or_404(
+            Movies.objects.annotate(review_count=Count('Reviews')), pk=pk)
 
         reviews = Review.objects.all()
         reviews = reviews.filter(movie_id__exact=movie.id)
