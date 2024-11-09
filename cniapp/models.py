@@ -5,9 +5,8 @@ from django.utils.text import slugify
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-""" Movie model, all fields available to be pulled from database """
-
 class Movies(models.Model):
+    """ Movie model, all fields available to be pulled from database """
     id = models.IntegerField(blank=False, null=False, primary_key=True)
     rotten_tomatoes_link = models.TextField(blank=True, null=True)
     movie_title = models.TextField(blank=True, null=True)
@@ -40,9 +39,9 @@ class Movies(models.Model):
     def __str__(self):
         return f"{self.movie_title if self.movie_title else 'Unknown title'}"
 
-""" Review Model """ 
 
 class Review(models.Model):
+    """ Review Model """ 
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="film_review")
@@ -66,8 +65,8 @@ class Review(models.Model):
         super().save(*args, **kwargs)
 
 
-""" Comment model """
 class Comment(models.Model):
+    """ Comment model """
     review = models.ForeignKey('Review', on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()

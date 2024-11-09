@@ -6,9 +6,7 @@
 <!-- Movie Search -->
 <!-- class main.bg adds background image to page -->
 
-<body class="main-bg">
-
-    <main class="trendingfont mx-auto" id="searchresults">
+    <main class="main-bg trendingfont mx-auto" id="searchresults">
         {% if movies %}
         <div id="search_results_window">
             <h2>Search found <strong>{{search_results_total}}</strong> results for "<strong>{{search_query}}</strong>"</h2>
@@ -25,7 +23,6 @@
                     <p><strong>Description: </strong>{{ movie.movie_info }}</p>
                     <p><strong>Director: </strong>{{ movie.directors }}</p>
                     <p><strong>Actors: </strong>{{ movie.actors }}</p>
-                    </a>
                     <p><strong>Rating: </strong>{{ movie.tomatometer_rating }}. <strong>Total Reviews</strong>:
                         ({{ movie.review_count }}) <a href="/movie/{{movie.id}}/review/add">Leave a Review</a></p>
                     <a href="https://www.rottentomatoes.com/{{movie.rotten_tomatoes_link}}"
@@ -40,7 +37,5 @@
         <p>No Results Found.</p>
         {% endif %}
     </main>
-</body>
-
 
 {% endblock %}

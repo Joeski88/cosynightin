@@ -7,11 +7,9 @@
 <main class="main-bg">
 
     <div class="moviesearchstarterbutton mx-auto searchform">
-        <button type="submit" class="btn">
-            <a class="nav-link text-white {% if request.path == movie_search %}active{% endif %}"
+            <button class="nav-link text-white btn {% if request.path == movie_search %}active{% endif %}" type="submit"
                 aria-label="searchbutton" aria-current="page" onClick="showSearchForm();">
-                CLICK HERE TO START YOUR MOVIE SEARCH </a>
-        </button>
+                CLICK HERE TO START YOUR MOVIE SEARCH </button>
     </div>
     <!-- main title-->
     <h3 class="hometitle mx-auto">Top Trending Movies To Stream</h3>

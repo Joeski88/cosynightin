@@ -14,7 +14,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # Debug toggle
 DEBUG =True
 
-ALLOWED_HOSTS = ['8000-joeski88-cosynightin-e6en1er8oxr.ws.codeinstitute-ide.net',
+ALLOWED_HOSTS = [
+    '8000-joeski88-cosynightin-e6en1er8oxr.ws.codeinstitute-ide.net',
                 '.herokuapp.com']
 
 # All apps used defined here
@@ -93,16 +94,17 @@ CSRF_TRUSTED_ORIGINS = [
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    'NAME':
+    'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
