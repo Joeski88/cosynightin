@@ -274,6 +274,11 @@ The CNI logo used in the Header is also a custom design using [Canva](https://ww
 
 ## Validation
 
+-  All code validation was screenshot, and added into a powerpoint presentation. See the link below for all of the documentation.
+
+[Validation PDF](static/documentation/validation/validations.pdf)
+
+
 ### run.py Linter Validation
 
 ![Screenshot](documentation/validation/)
