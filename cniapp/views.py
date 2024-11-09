@@ -12,18 +12,19 @@ from .forms import MovieSearchForm, ReviewForm
 
 
 def signin(request):
+    """ Forces user to signin or create an account"""
     template_name = "cniapp/index.html"
     username = request.POST["username"]
     password = request.POST["password"]
-    print(username, password)
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
         # Redirect to a success page.
     return redirect("/")
 
-"""set which html template to use for home page """
+
 class HomePageView(TemplateView):
+    """set which html template to use for home page """
     template_name = "cniapp/index.html"
 
     def get_context_data(self, **kwargs):
@@ -39,8 +40,9 @@ class HomePageView(TemplateView):
 
         return context
 
-""" Movie Review View """
+
 class ReviewCreateView(LoginRequiredMixin, CreateView):
+    """ Movie Review View """
     model = Review
     form_class = ReviewForm
     template_name = 'cniapp/review_form.html'
@@ -63,6 +65,7 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
     
 class ReviewUpdateView(LoginRequiredMixin, UpdateView):
+    """ View to allow user to edit/update reviews they have left """
     model = Review
     form_class = ReviewForm
     template_name = 'cniapp/review_form.html'
@@ -73,6 +76,7 @@ class ReviewUpdateView(LoginRequiredMixin, UpdateView):
         return Review.objects.filter(author=self.request.user)
     
 class ReviewDeleteView(LoginRequiredMixin, DeleteView):
+    """ View to allow user to delete their own reviews """
     model = Review
     template_name = 'cniapp/review_confirm_delete.html'
     success_url = reverse_lazy('index')
@@ -94,10 +98,11 @@ class UserReviewsView(LoginRequiredMixin, ListView):
         # Get reviews written by the logged-in user
         return Review.objects.filter(author=self.request.user)
     
-"""view for search filter"""
+
 # login authentication and redirection path
 @login_required(login_url="/accounts/login/")
 def movie_search_view(request):
+    """view for search filter"""
     template_name = "cniapp/movie_search.html"
     # starts with all movies, then filters based on form input
     form = MovieSearchForm()
@@ -161,8 +166,9 @@ def movie_search_view(request):
         }
         return render(request, template_name, context) 
 
-"""view for details provided from database"""
+
 class MovieDetailView(View):
+    """view for details provided from database"""
     template_name = "cniapp/movie_detail.html"
 
     def get(self,request, pk):

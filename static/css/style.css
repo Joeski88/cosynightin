@@ -214,9 +214,10 @@ footer {
 .form-control {
     align-content: center;
     position: static;
-    width: 100%;
-    display: inline-block;
+    width: 70%;
     text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #searchfilter {
@@ -328,7 +329,7 @@ footer {
     margin-top: auto;
     height: 100vh;
     color: antiquewhite;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 .userreviews {
@@ -342,6 +343,7 @@ footer {
 
 /*login logout signup html page basic styling */
 .loginpages {
+    margin-top: 100px;
     height: 100vh;
     color: antiquewhite;
 }
@@ -371,7 +373,7 @@ footer {
 }
 
 #search_results_window {
-    height: 585px; 
+    height: 100%; 
     overflow: auto;
 }
 
@@ -382,3 +384,28 @@ footer {
     background-color: transparent;
 }
 
+/* user review edit & delete page styles */
+.userreviews {
+    height: 100%;
+    overflow: auto;
+    margin-bottom: 100px;
+}
+
+.userreviews li {
+    background-color: rgb(57, 93, 160);
+    color: antiquewhite;
+    opacity: 90%;
+}
+
+.reviewwelcomemsg {
+    margin-top: 100px;
+}
+
+/* movie details styles */
+.moviedetailpage {
+    margin-top: 100px;
+    background-color: #45494dbd;
+    opacity: 90%;
+    border-radius: 5px;
+    overflow: auto;
+}

@@ -15,7 +15,7 @@
 <div class="userreviews">
   <!-- Shows any reviews left by other users -->
   <h4>Latest Reviews</h4>
-  <ul style="overflow: auto; height: 500px;">
+  <ul>
     {% for review in reviews %}
     <li style="border-bottom: solid 2px silver;">
       <small>{{ review.created_on }}</small><br><strong>{{ review.title }}</strong> by {{ review.author }} <br>

@@ -3,7 +3,7 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-      <div class="text-end m-3 text-center text-white">
+      <div class="reviewwelcomemsg text-end text-center text-white">
         <h4>
                 Welcome {{ user.first_name }} {{ user.last_name }}
         </h4>
@@ -14,15 +14,15 @@
       <hr>
       <h1 class="text-white">Your Reviews</h1>
       {% if reviews %}
-        <ul class="list-group text-white">
+        <ul class="userreviews list-group text-white">
           {% for review in reviews %}
             <li class="list-group-item mb-3">
               <h3>{{ review.title }}</h3>
-              <p><strong>Movie:</strong> <a href="{% url 'movie_detail' review.movie.pk %}">{{ review.movie.movie_title }}</a></p>
+              <p><strong>Movie:</strong> <a class="text-white" href="{% url 'movie_detail' review.movie.pk %}">{{ review.movie.movie_title }}</a></p>
               <p><strong>Content:</strong> {{ review.content }}</p>
               <p><strong>Created on:</strong> {{ review.created_on|date:"F j, Y, g:i a" }}</p>
               <div class="mt-2">
-                <a href="{% url 'review_update' review.id %}" class="btn btn-warning btn-sm">Edit Review</a>
+                <a href="{% url 'review_update' review.id %}" class="btn btn-success btn-sm">Edit Review</a>
                 <a href="{% url 'review_delete' review.id %}" class="btn btn-danger btn-sm">Delete Review</a>
               </div>
             </li>
