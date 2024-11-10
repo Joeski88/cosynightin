@@ -40,7 +40,6 @@ class Movies(models.Model):
         db_table = 'movies'
         ordering = ["-tomatometer_rating"]
 
-
     def __str__(self):
         return f"{self.movie_title if self.movie_title else 'Unknown title'}"
 
