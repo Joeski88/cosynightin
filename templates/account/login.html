@@ -13,26 +13,35 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign In" %}</h3>
 
-            <p>{% blocktrans %}For help with what to watch later, <a class="link" href="{{ signup_url }}">sign up</a>
+            <p>{% blocktrans %}For help with what to watch later, 
+                <a class="link" href="{{ signup_url }}">sign up</a>
                 first.{% endblocktrans %}</p>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {{ form | crispy }}
+            <form class="login" method="POST"
+            action="{% url 'account_login' %}">
+                {{ form|crispy }}
                 {% csrf_token %}
+                
                 {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    <input type="hidden" name="{{ redirect_field_name }}"
+                    value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn btn-signup btn-primary right" type="submit">{% trans "Sign In" %}</button>
-                {% if user.is_authenticated %}
+        
+                <button class="btn btn-signup btn-primary right" type="submit">
+                    {% trans "Sign In" %}
+                </button>
+        
+                <!-- Check if there are any form errors -->
+                {% if form.errors %}
+                    <div class="alert alert-danger mt-2">
+                        <p>Incorrect login details. Please try again.</p>
+                    </div>
+                {% endif %}
             </form>
-            <div>
-                {% else %}
-                <p>Incorrect Login details. Please Try again.</p>
-            </div>
-            {% endif %}
+        </div>
         </div>
     </div>
 </div>

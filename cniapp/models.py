@@ -40,6 +40,7 @@ class Movies(models.Model):
         db_table = 'movies'
         ordering = ["-tomatometer_rating"]
 
+
     def __str__(self):
         return f"{self.movie_title if self.movie_title else 'Unknown title'}"
 
@@ -65,8 +66,8 @@ class Review(models.Model):
         managed = True
         ordering = ["-created_on"]
 
-        def __str__(self):
-            return f"{self.title} | written by {self.author}"
+    def __str__(self):
+        return f"{self.title} | written by {self.author}"
 
     def save(self, *args, **kwargs):
         if not self.slug:  # Only slugify if there's no existing slug

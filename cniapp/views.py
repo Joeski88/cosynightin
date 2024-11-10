@@ -141,7 +141,7 @@ def movie_search_view(request):
             full_search_query.append(genre)
         if release_date:
             movies = movies.filter(
-                original_release_date__icontains=release_date)
+            original_release_date__icontains=release_date)
             full_search_query.append(release_date)
         if directors:
             movies = movies.filter(directors__icontains=directors)
@@ -153,6 +153,9 @@ def movie_search_view(request):
             # added gt to stop filter sending only the rating provided by user
             movies = movies.filter(tomatometer_rating__gt=tomatometer_rating)
             full_search_query.append(tomatometer_rating)
+        
+        # Apply ordering by 'tomatometer_rating' after all filters are set
+        movies = movies.order_by('-tomatometer_rating')
 
         filtered_movies_count = movies.count()
         if filtered_movies_count == all_movies_count:

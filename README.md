@@ -2,7 +2,7 @@
 
 ![Responsive Mockup](/static/documentation/screenshots/homepagemockup.png)
 
-*The link to [CosyNightIn](https://8000-joeski88-cosynightin-e6en1er8oxr.ws.codeinstitute-ide.net/)*
+*The link to [CosyNightIn](https://cosynightin-7c0c1b78015c.herokuapp.com/)*
 
 ## About
 
@@ -33,8 +33,8 @@ CosyNightIn is an app that allows you to search for the perfect film to watch de
 |[#2](https://github.com/Joeski88/cosynightin/issues/18)|As a First Time Visitor, I want to be able to find and discover films to watch based on how im feeling and what kind of mood im in.|
 |[#3](https://github.com/Joeski88/cosynightin/issues/3)|As a First Time Visitor, I want to be able to easily log out of my account for security reasons, after I have found the film I want to watch.|
 |[#4](https://github.com/Joeski88/cosynightin/issues/4)|As a First Time Visitor, I want to be able to see detailed information of each film I look at to be able to make an informed decision on what to watch.|
-|[#6](https://github.com/Joeski88/cosynightin/issues/15)|As a First Time Visitor, I want to be able to use filters to streamline my search to narrow down the results to make my decision easier to make.|
-|[#7](https://github.com/Joeski88/cosynightin/issues/10)|As a First Time Visitor, I want to be able to have the ability to read reviews of other users to help aid me make my decision.|
+|[#5](https://github.com/Joeski88/cosynightin/issues/15)|As a First Time Visitor, I want to be able to use filters to streamline my search to narrow down the results to make my decision easier to make.|
+|[#6](https://github.com/Joeski88/cosynightin/issues/10)|As a First Time Visitor, I want to be able to have the ability to read reviews of other users to help aid me make my decision.|
 
 --------
 
@@ -42,12 +42,12 @@ CosyNightIn is an app that allows you to search for the perfect film to watch de
 
 | Issue ID    | User Story |
 |-------------|-------------|
-|[#2](https://github.com/Joeski88/cosynightin/issues/8)|As a Frequent Visitor, I want to be able to review films ive watched to help other users make a decision.|
-|[#3](https://github.com/Joeski88/cosynightin/issues/21)|As a Frequent Visitor, I want to be able to edit or delete my reviews, incase i have changed my mind or regret my post. |
-|[#4](https://github.com/Joeski88/cosynightin/issues/5)|As a Frequent Visitor, I want to be able to search using keywords or film titles to get information on specific films i could potentially watch. |
-|[#5](https://github.com/Joeski88/cosynightin/issues/6)|As a Frequent Visitor, I want to be able to search using actor and actress names to get information on specific films i could potentially watch. |
-|[#6](https://github.com/Joeski88/cosynightin/issues/12)|As a Frequent Visitor, I want to be able to filter by film rating (provided by rotten tomatoes) to narrow down the search for what I want. |
-|[#7](https://github.com/Joeski88/cosynightin/issues/11)|As a Frequent Visitor, I want to be able to search using specfic genre names to get information on specific films i could potentially watch. |
+|[#1](https://github.com/Joeski88/cosynightin/issues/8)|As a Frequent Visitor, I want to be able to review films ive watched to help other users make a decision.|
+|[#2](https://github.com/Joeski88/cosynightin/issues/21)|As a Frequent Visitor, I want to be able to edit or delete my reviews, incase i have changed my mind or regret my post. |
+|[#3](https://github.com/Joeski88/cosynightin/issues/5)|As a Frequent Visitor, I want to be able to search using keywords or film titles to get information on specific films i could potentially watch. |
+|[#4](https://github.com/Joeski88/cosynightin/issues/6)|As a Frequent Visitor, I want to be able to search using actor and actress names to get information on specific films i could potentially watch. |
+|[#5](https://github.com/Joeski88/cosynightin/issues/12)|As a Frequent Visitor, I want to be able to filter by film rating (provided by rotten tomatoes) to narrow down the search for what I want. |
+|[#6](https://github.com/Joeski88/cosynightin/issues/11)|As a Frequent Visitor, I want to be able to search using specfic genre names to get information on specific films i could potentially watch. |
 
 --------
 
@@ -57,35 +57,35 @@ CosyNightIn is an app that allows you to search for the perfect film to watch de
 |-------------|-------------|
 |[#1](https://github.com/Joeski88/cosynightin/issues/13)| As an admin user, I want to be able to easily be able to access the admin panel provided by django to control the flow of data input to the app. |
 |[#2](https://github.com/Joeski88/cosynightin/issues/20)|As an admin user, I want to be able to add and approve new members/users so that I can manage the account and ensure the process and app is clean and restrict an abusive behaviour/language. |
-|[#2](https://github.com/Joeski88/cosynightin/issues/20)| As an admin user, I want to be able to control the flow of content added to the application via the django admin app. | 
+|[#3](https://github.com/Joeski88/cosynightin/issues/20)| As an admin user, I want to be able to control the flow of content added to the application via the django admin app. | 
 
 --------
 
 ## Features
-  
-  - Home page will provide and carousel of trending movies currently available to stream, for potentially a quick decision in what to watch. All will contain an external rotten tomatoes link to provide extra details on each film.
 
- ![features](/static/documentation/screenshots/carouselfeature.png)
+- Home page will provide and carousel of trending movies currently available to stream, for potentially a quick decision in what to watch. All will contain an external rotten tomatoes link to provide extra details on each film.
 
- -------
+- ![features](/static/documentation/screenshots/carouselfeature.png)
+
+-------
 
 - The carousel is highlighted in the screenshot below, the next and prev pointers as well as the slide counter at the bottom.
 
- ![features](/static/documentation/screenshots/carouselpointerfeatures.png)
+- ![features](/static/documentation/screenshots/carouselpointerfeatures.png)
 
- -------
+-------
 
 - Once logged in the user will be able to use a variety of filters to use to streamline the result output and narrow down their search to make an easier choice.
 
- ![features](/static/documentation/screenshots/filter.png)
+- ![features](/static/documentation/screenshots/filter.png)
 
- -------
+-------
 
 - Users will have the option of leaving reviews on movies they have watched. Below is a screen shot of me about to leave a review for one of my favorite comdey films "Step Brothers".
 
- ![features](/static/documentation/screenshots/leavereview.png)
+- ![features](/static/documentation/screenshots/leavereview.png)
 
- -------
+-------
 
 - Users will have the option to edit or delete reviews made at a previous time. 
 
@@ -93,9 +93,9 @@ CosyNightIn is an app that allows you to search for the perfect film to watch de
 
 - Users are provided with their account information at the top of their 'profile' page.
 
-![features](/static/documentation/screenshots/editreview.png)
-
 ![features](/static/documentation/screenshots/navbarreview.png)
+
+![features](/static/documentation/screenshots/editreview.png)
 
 -------
 
@@ -115,7 +115,11 @@ This project has been a huge challenge for me personally, coming from 0 knowledg
 
   - In future developments I would like to inclulde the ability for a user to 'like' other users comments.
 
-  - In future developments I would like to regularly deploy updates with new films and new releases upcoming. 
+  - In future developments I would like to regularly deploy updates with new films and new releases upcoming.
+
+  - IMPORTANT!! During Manual testing, I found that when trying to log in with unvarified login details, theres no error message displayed, and user is redirected back to the home page. Due to this being discovered very close to the deadline I didnt have enough time to implement this feature correctly.
+
+-------
 
 ## Flowchart & Entity Relationship Diagram
 
@@ -147,16 +151,22 @@ The relationships used in the application:
 
 - [CSS](https://www.w3.org/Style/CSS/Overview.en.html) used to edit and adjust the styling and color scheme throughout the app production
 
+--------
+
 ### Frameworks/Libraries, Programmes and Tools:
 
 - [Django](https://www.djangoproject.com/): python framework used to create the project.
 - [jQuery](https://jquery.com/): was used to control click events.
 - [Bootstrap](https://getbootstrap.com/): Frameworks used to style parts of the app.
 
+--------
+
 #### Python modules/packages:
 
 - [SQLite](https://www.sqlite.org/): was used to store rotten tomatoes database.
 - [PostgreSQL](https://www.postgresql.org/): the database used to store all the data on admin side.
+
+--------
 
 #### Other tools:
 
@@ -184,7 +194,7 @@ The relationships used in the application:
 - [Canva](https://www.canva.com/): I used canva to create CNI app logo.
 - [Googlefonts](https://fonts.google.com/specimen/Roboto): Used to find the font needed for the app.  
 
----
+-------
 
 ## Bugs
 
@@ -206,14 +216,6 @@ The relationships used in the application:
 *Solution* 
 - I forgot to add the model to admin.py therefore it wasnt looking for it.
 ![Screenshot](/static/documentation/debugging/adminsolution.png)
-
---------
-
-*Bug*
-- Struggled to connect external database to app using sqlite db.
-
-*Solution*
-??????????????????????????
 
 --------
 
@@ -258,7 +260,7 @@ The relationships used in the application:
 - Log in/out & sign up html pages not inheriting the base html as they should in regards to styles (background image and font colours etc) despite the static files being loaded at the top of the page.
 
 *Solution* 
-- Forgot to add the ".main-bg" class to the main of each html page, including the log in and log out pages. 
+- Forgot to add the ".main-bg" class to each html page, including the log in and log out pages. 
 
 --------
 
@@ -320,7 +322,7 @@ The CNI logo used in the Header is also a custom design using [Canva](https://ww
 
 -  All code validation was screenshot, and added into a powerpoint presentation. See the link below for all of the documentation.
 
-[Validation PDF](static/documentation/validation/validations.pdf)
+- [Validation PDF](static/documentation/validation/validations.pdf)
 
 --------
 
@@ -328,33 +330,32 @@ The CNI logo used in the Header is also a custom design using [Canva](https://ww
 
 | Feature | Action | Expected Result | Tested | Passed | Comments |
 | --- | --- | --- | --- | --- | --- |
-| Home Page | | | | | |
+| *Home Page* | | | | | |
 | Bootstrap Carousel Image Slides | Visual aspect to add an appealing style to the home page, hammers home eactly what the site is about. | Aligned properly and clearly visible, 'active' feature to make slides automatically change working. | Yes | Yes | - |
 | Sign Up | Option to create account as a user | The user is redirected to sign up page | Yes | Yes | - |
-| Sign In | User inputs login details to gain access to full site | Input taken and data used to start the game | Yes | Yes | - |
-| Sign Out | User asked for number of players and player names | Input taken and data used to start the game | Yes | Yes | - |
-| Search Filter Feature | | | | | |
-| Search by Film Name | Search by specific film name | Search results shnow a list of the movie or movies that match the text in the search field input.  | Yes | Yes | Can show multiple film titles as part of a set, (eg Harry Potter), as well as idividual movies |
+| Sign In | User inputs login details to gain access to full site | Once logged in the user can access the use of the search feature | Yes | Yes | - |
+| Sign Out | User has option to log out on any page they are on | User clicks log out, confirms and are subsequentley logged out of their profile | Yes | Yes | - |
+| *Search Filter Feature* | | | | | |
+| Search by Film Name | Search by specific film name | Search results show a list of the movie or movies that match the text in the search field input.  | Yes | Yes | Can show multiple film titles as part of a set, (eg Harry Potter), as well as idividual movies |
 | Search by Genre | Search by specific genre (eg Horror, comedy) | As above, however, search result based up genre input | Yes | Yes | - |
 | Search by Actor| Search by specific Actor/Actress | Any film featuring the named actor/actress will be listed in search results | Yes | Yes | - |
 | Search by Release Date | Search by specific Year of release | Define which year you wish the results to yield from (eg 1991) and all films released in that year are listed in the search results | Yes | Yes | - |
 | Search by Rotten Tomato Rating | Search by rating | Any film with the specified rating or higher will be listed in the search results | Yes | Yes | - |
-| Reviews & Comments | | | | | |
-| Leaving a Review | The rules are listed numerically, in a different color font | The user can gain a clear understanding of the game and how to play it | Yes | Yes | - |
-| Adding Comments | Select this menu option to leave the game | The user is given a goodbye message and the programme exits back to the python terminal | Yes | Yes | - |
-| 'Like' Button | Select this menu option to leave the game | The user is given a goodbye message and the programme exits back to the python terminal | Yes | Yes | - |
-| Admin Testing | | | | | |
-| Add a User | Search by specific film name | Search results shnow a list of the movie or movies that match the text in the search field input.  | Yes | Yes | Can show multiple film titles as part of a set, (eg Harry Potter), as well as idividual movies |
-| Remove/Delete User | Search by specific genre (eg Horror, comedy) | As above, however, search result based up genre input | Yes | Yes | - |
-| Approve Reviews/Comments | Search by specific Actor/Actress | Any film featuring the named actor/actress will be listed in search results | Yes | Yes | - |
-| Delete Reviews/Comments | Search by specific Year of release | Define which year you wish the results to yield from (eg 1991) and all films released in that year are listed in the search results | Yes | Yes | - |
-| Search by Rotten Tomato Rating | Search by rating | Any film with the specified rating or higher will be listed in the search results | Yes | Yes | - |
+| *Reviews* | | | | | |
+| Leaving a Review | User has ability to leave a review through their profile which is visible for other users | Once a movie is selected theres a 'leave review' button, upon clicking, they are directed to a review page where the content of review is input into a form. its then saved to their profile. | Yes | Yes | - |
+| Edit/Delete review | User has ability to edit/change/or delete their reviews stored to their profile. | The user clicks on the button in the nav bar and is taken to a page where their reviews are stored and can be edited or deleted. | Yes | Yes | - |
+| *Admin Testing* | | | | | |
+| Add a User | User can be added via django admin page | When the superuser is accessing the admin page they have ability to add users to aid site safety and security.  | Yes | Yes | - |
+| Remove/Delete User |  User can be removed/deleted via django admin page | When the superuser is accessing the admin page they have ability to remove/delete users accounts to aid site safety and security. | Yes | Yes | - |
+| Approve Reviews/Comments | All reviews must be approved in admin | The reviews can be changed from drafts to published in admin. | Yes | Yes | - |
+| Delete Reviews/Comments | Reviews can be removed/deleted via django admin page | When the superuser is accessing the admin page they have ability to remove/delete reviews to aid site safety and security. | Yes | Yes | - |
 
+--------
 
 ## Deployment
 
 - The program was deployed to [Heroku](https://dashboard.heroku.com).
-- The program can be reached by the [link](https://hang-man888-99eb4815e363.herokuapp.com/)
+- The program can be reached by the [link](https://cosynightin-7c0c1b78015c.herokuapp.com/)
 
 ### To deploy the project as an application that can be **run locally**:
 
@@ -368,31 +369,33 @@ The CNI logo used in the Header is also a custom design using [Canva](https://ww
 Create a local copy of the GitHub repository by following one of the two processes below:
 
 - Download ZIP file:
-  1. Go to the [GitHub Repo page](https://github.com/Joeski88/hang_man)
+  1. Go to the [GitHub Repo page](https://github.com/Joeski88/cosynightin.git)
   2. Click the Code button and download the ZIP file containing the project.
   3. Extract the ZIP file to a location on your PC.
 
 - Clone the repository:
   1. Open a folder on your computer with the terminal.
   2. Run the following command
-  - `git clone https://github.com/Joeski88/hang_man`
+  - `git clone https://github.com/Joeski88/cosynightin.git`
 
 - Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
-  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Joeski88/hang_man)
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://github.com/Joeski88/cosynightin.git)
 
   1. Install Python module dependencies:
      
-      1. Navigate to the folder hang_man by executing the command:
-      - `cd hang_man`
+      1. Navigate to the folder cniapp by executing the command:
+      - `cd cniapp`
       2. Run the command pip install -r requirements.txt
         - `pip3 install -r requirements.txt`
+
+--------
 
 ### To deploy the project to Heroku so it can be run as a remote web application:
 - Clone the repository:
   1. Open a folder on your computer with the terminal.
   2. Run the following command
-    - `git clone https://github.com/Joeski88/hang_man.git`
+    - `git clone https://github.com/Joeski88/cosynightin.git`
   3. Create your own GitHub repository to host the code.
   4. Run the command `git remote set-url origin <Your GitHub Repo Path>` to set the remote repository location to your repository.
   5. Push the files to your repository with the following command:
@@ -400,22 +403,22 @@ Create a local copy of the GitHub repository by following one of the two process
   6. Create a Heroku account if you don't already have one here [Heroku](https://dashboard.heroku.com).
   7. Create a new Heroku application on the following page here [New Heroku App](https://dashboard.heroku.com/apps):
   8. Go to the Deploy tab. 
-      - ![Deploy](documentation/deployment/heroku_deploy_tab.png)
+      - ![Deploy](/static/documentation/deployment/deploytab.png)
   9. Link your GitHub account and connect the application to the repository you created. 
-      - ![github](documentation/deployment/deployment_method.png)
+      - ![github](/static/documentation/deployment/appinfo.png)
   10. Go to the Settings tab.
   11. Click "Add buildpack". 
-  12. Add the Python and Node.js buildpacks in the following order.
-      - ![Buildpack](documentation/deployment/buildpacks.png)
+  12. Add the Python buildpack like the following picture shows.
+      - ![Buildpack](/static/documentation/deployment/buildpacks.png)
   13. Click "Reveal Config Vars." 
   14. Add 1 new Config Vars:
       - Key: PORT Value: 8000
       - *This Config was provided by [CODE INSTITUTE](https://codeinstitute.net/)*.
-      - ![ConfigVars](documentation/deployment/config_vars.png)
+      - ![ConfigVars](/static/documentation/deployment/configvars.png)
   15. Go back to the Deploy tab.
   16. Click "Deploy Branch".
         - Wait for the completion of the deployment. 
-        - ![Deploy](documentation/deployment/deploy.png)
+        - ![Deploy](/static/documentation/deployment/deployment.png)
   17. Click "Open app" to launch the application inside a web page.
 
 --------
@@ -426,12 +429,13 @@ Create a local copy of the GitHub repository by following one of the two process
 - Rotten Tomatoes for the links and data [RottenTomatoes](https://www.rottentomatoes.com/) Used Rotten tomatoes and a reference for all movies provided to the database.
 - Kaggle [Kaggle](https://www.kaggle.com/datasets?search=rotten+tomatoes) Database hub that I pulled the movie databse from.
 - Bootstrap [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) Used Bootstrap documentation to help guid me to the correct code to use and what its for.
+- jQuery [jQuery](https://jquery.com/) Was used for help with some parts of interactivity.
 
 --------
 
 ## Acknowledgements
-- My Mentor Iuliia Konovalova. I had issues with the help i was recieving with my previous mentor, 
-  but i noticed a huge difference with the way Julia spoke to me and how she managed my situation, 
-  she deserves alot of credit and praise for.
+- My Mentor Iuliia Konovalova. I had issues with the help I was recieving with my previous mentor, 
+  but I noticed a huge difference with the way Julia spoke to me and how she managed my situation, 
+  she deserves alot of credit and praise for. She has been very supportive and given me the right style of management I need to improve.
 
 --------
